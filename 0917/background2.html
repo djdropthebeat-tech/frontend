@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .box1{
+        width: 1200px;
+        height: 300px;
+        border: 1px solid #333;
+        background-color: pink;
+        margin: 100px auto;
+        background-image: url(images/lion.jpg);
+        /* 이미지가 작을 경우 가로세로 반복해서 나타남 */
+
+        background-repeat: no-repeat;
+        /* 이미지가 한 개만 나타남 */
+    
+        background-repeat: repeat-x;
+        /* x축으로만 반복됨 */
+    }
+    .box2{
+        width: 1200px;
+        height: 300px;
+        border: 1px solid #333;
+        background-color: pink;
+        margin: 100px auto;
+        background-image: url(images/lion.jpg);
+        background-repeat: no-repeat;
+        /* background-position: 50% 50%; */
+        /* 배경위치가 가로 50%, 세로 50% 정중앙 */
+        /* background-position: center center; 가로 세로 */
+        background-position: 200px 100px;
+   }
+   .box3{
+    width: 1200px;
+    height: 300px;
+    border: 1px solid #333;
+    background-color: pink;
+    margin: 100px auto;
+    background-image: url(images/lion.jpg);
+    background-repeat: no-repeat;
+    
+    background-size: contain;
+    /* 화면에 짧은 쪽이 먼저 채워짐 */
+
+    background-size: cover;
+    /* 화면에 더 긴 쪽이 꽉채워짐 (나머지 잘림) */
+    
+    background-size: 200px 200px;
+    /* 강제로 늘려서 사용하면 픽셀 깨질 수 있음 */
+}
+.box4{
+    width: 1200px;
+    height: 300px;
+    border: 1px solid #333;
+    background-color: pink;
+    margin: 100px auto;
+    background: pink url(images/lion.jpg) no-repeat 50% 50% / 200px 200px;
+    /* background  색상,   이미지파일 위치,      반복,   화면 위치 / 이미지 크기 */
+    /* 한 줄로 쭉 적고 까먹은 하나는 밑줄에 적어도 되는데, 밑줄에 한줄로 모두 적게되면 떨어진 한 옵션은 적용이 안 됨 */
+}
+
+</style>
+
+</head>
+<body>
+    <div class="box1">배경</div>
+    <div class="box2">배경</div>
+    <div class="box3">배경</div>
+    <div class="box4">배경</div>
+
+</body>
+</html>
