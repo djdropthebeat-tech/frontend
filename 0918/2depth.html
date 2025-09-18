@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+*{margin: 0; padding: 0;}
+    
+    ul li{list-style: none;}    
+    #wrap{
+        width: 900px;
+        overflow: hidden;
+        margin: 100px auto 0;
+        a{text-decoration: none;}
+    }
+    #header{
+        margin: 5px;
+    }
+    .one{overflow: hidden;}
+    .one > li {float: left;}
+    .one li{background-color: #a3bfe2;}
+
+    .one li a{
+        display: block;
+        width: 150px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        color: #000;
+    }
+    .one li ul{
+        position: absolute;
+        /* 겹친다. 자리값이 없다. */
+        display: none;
+        /* 숨기기 */
+    }
+
+    .one li:hover ul{
+        display: block;
+    }
+     /* .one li:hover ul li{
+        background-color: #375880;
+    } */
+
+    .one li ul li a:hover{
+        background-color: yellow;
+        font-weight: bold;
+        color: red;
+    }
+    /* .one li ul li a:hover{
+        color: red;
+    } */
+
+
+</style>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <ul class="one">
+                <li><a href="Mainmenu1">Mainmenu1</a>
+                    <ul>
+                        <li><a href="#">submenu1</a></li>
+                        <li><a href="#">submenu2</a></li>
+                        <li><a href="#">submenu3</a></li>
+                        <li><a href="#">submenu4</a></li>
+                    </ul>
+                </li>
+                <li><a href="Mainmenu2">Mainmenu2</a>
+                    <ul>
+                        <li><a href="#">submenu1</a></li>
+                        <li><a href="#">submenu2</a></li>
+                        <li><a href="#">submenu3</a></li>
+                        <li><a href="#">submenu4</a></li>
+                    </ul>
+                </li>
+                <li><a href="Mainmenu3">Mainmenu3</a>
+                    <ul>
+                        <li><a href="#">submenu1</a></li>
+                        <li><a href="#">submenu2</a></li>
+                        <li><a href="#">submenu3</a></li>
+                        <li><a href="#">submenu4</a></li>
+                    </ul>
+                </li>
+                <li><a href="Mainmenu4">Mainmenu4</a>
+                    <ul>
+                        <li><a href="#">submenu1</a></li>
+                        <li><a href="#">submenu2</a></li>
+                        <li><a href="#">submenu3</a></li>
+                        <li><a href="#">submenu4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    
+    <div id="content">
+        <h3>html이란?</h3>
+        <p>하이퍼 텍스트 마크업 랭귀지</p>
+        <p><img src="images/cw1.jpg" alt="" width="900">
+        </p>
+    </div>
+    <div id="footer">
+        <p>&copy;Design By Dajung</p>
+    </div>
+    </div>
+</body>
+</html>

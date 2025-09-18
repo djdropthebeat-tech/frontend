@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+*{margin: 0; padding: 0;}
+
+.container{
+    width: 1000px;
+    height:650px;
+    
+}
+
+.left{
+    width: 200px;
+    height: 650px;
+    background-color: pink;
+    float: left;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.logo{
+    width: 190px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 40px;
+    /* background-color: blue; */
+}
+.menulist{
+    width: 190px;
+    height: 280px;
+    /* background-color: gray; */
+}
+
+.menulist li{
+    width: 180px;
+    height: 60px;
+    border: 1px solid #333;
+    text-align: center;
+    text-decoration: none;
+    line-height: 60px;
+    list-style: none
+}
+.menulist>li>a{
+    color: #333;
+    text-decoration: none;
+}
+
+.right{
+    width: 800px;
+    height: 650px;
+    float: right;
+}
+.box1{
+    width: 795px;
+    height: 350px;
+    background-color: yellow;
+}
+.box2{
+    width: 795px;
+    height: 200px;
+    float: left;
+}
+.content{
+    width: 265px;
+    height: 200px;
+    float: left;
+}
+.content1{background-color: rgb(167, 167, 167);}
+.content2{background-color: rgb(107, 107, 107);}
+.content3{background-color: rgb(68, 68, 68);}
+
+footer{
+    width:270px;
+    height:100px;
+}
+.f_logo{
+    width: 180px;
+    height: 100px;
+    background-color: #ffbb00;
+    float: left;
+}
+
+.f_right{
+    float: left
+}
+.f_menu{
+    width: 615px;
+    height: 50px;
+    background-color: #be8c00;
+}
+.f_copy{
+    width: 615px;
+    height: 50px;
+    background-color: #6b4f00;
+}
+</style>    
+
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="left">
+            <div class="logo">LOGO</div>
+            <ul class="menulist">
+                <li><a href="#">MENU-1</a></li>
+                <li><a href="#">MENU-2</a></li>
+                <li><a href="#">MENU-3</a></li>
+                <li><a href="#">MENU-4</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="box box1"></div>
+            <div class="box box2">
+                <div class="content content1"></div>
+                <div class="content content2"></div>
+                <div class="content content3"></div>
+            </div>
+            <div id="footer">
+                <div class="f_logo"></div>
+                <div class="f_right">
+                    <div class="f_menu"></div>
+                    <div class="f_copy"></div>
+                </div>
+
+            </div>
+        </div> 
+    </div>
+
+
+</body>
+</html>
