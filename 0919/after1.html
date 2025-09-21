@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    ul::before{
+        /* :hover 같은 :를 한 개 쓰는 게 아닌 ::를 사용해 구분지음 */
+        content: "첫번째";
+    }
+    ul::after{
+        content: "마지막";
+    }
+
+    ul li::before{
+        content: "👻 (❁´◡`❁)";
+    }
+
+
+
+</style>
+
+</head>
+<body>
+    <ul>제품소개</ul>
+    <ul>커뮤니티</ul>
+    <ul>다운로드</ul>
+    <ul>회사소개</ul>
+</body>
+</html>

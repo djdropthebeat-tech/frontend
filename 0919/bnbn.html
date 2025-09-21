@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+*{margin: 0; padding: 0;}
+.bigbox{
+    width: 410px;
+    height: 410px;
+    border: 1px solid #333;
+    margin: 0 auto;
+    position: relative;
+}
+
+.face{
+    width: 400px;
+    height: 400px;
+    border: 5px solid #333;
+    border-radius: 50%;
+    background-color: rgb(130, 200, 240);
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+}
+
+.eye{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 160px;
+}
+
+.eye.left{
+    left: 90px;
+}
+.eye.right{
+    right: 90px;
+}
+.nose{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    bottom: 140px;
+    left: 200px;
+    margin-left:  -20px;
+    z-index: 5;
+}
+.mouth{
+    width: 70px;
+    height: 90px;
+    border: 5px solid #333;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    bottom: 65px;
+    
+}
+.mouth.left{
+    transform: rotate(45deg);
+    left: 130px;
+}
+.mouth.right{
+    transform: rotate(-45deg);
+    right: 130px;
+}
+
+.linebox.left{
+    width: 100px;
+    height: 100px;
+    /* border: 1px dotted red; */
+    position: absolute;
+    left: 55px;
+    bottom: 70px; 
+}
+.line{
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: #333;
+    z-index: 10;
+}
+.line.left1{
+    top: 20px;
+    right: 0;
+    transform: rotate(15deg);
+}
+.line.left2{
+    top: 50px;
+    right: 0;
+}
+.line.left3{
+    top: 80px;
+    right: 0;
+    transform: rotate(-15deg);
+}
+
+.linebox.right{
+    width: 100px;
+    height: 100px;
+    /* border: 1px dotted red; */
+    position: absolute;
+    right: 55px;
+    bottom: 70px; 
+}
+
+.line.right1{
+    top: 20px;
+    transform: rotate(-15deg);
+}
+.line.right2{
+    top: 50px;
+}
+.line.right3{
+    top: 80px;
+    transform: rotate(15deg);
+}
+</style>
+
+</head>
+<body>
+    <div class="bigbox">
+        <div class="face">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose"></div>
+            <div class="mouth left"></div>
+            <div class="mouth right"></div>
+            <div class="linebox left">
+                <div class="line left1"></div>
+                <div class="line left2"></div>
+                <div class="line left3"></div>
+            </div>
+            <div class="linebox right">
+                <div class="line right1"></div>
+                <div class="line right2"></div>
+                <div class="line right3"></div>
+            </div>    
+        </div>    
+    </div>
+</body>
+</html>
