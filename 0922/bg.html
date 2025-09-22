@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+#balloon1{
+    width: 116px;
+    height: 160px;
+    left: 100px;
+    position: relative;
+    background: url(img/bg-main1.png) no-repeat;
+    animation: myani1 5s alternate infinite ease-out;
+}
+
+@keyframes myani1 {
+    0% { 
+        left: 100px;
+        top: 0px;}
+    100% { 
+        left: 100px;
+        top: 300px;
+    }
+    
+}
+/* ------------------------------------------------------- */
+#balloon2{
+    width: 116px;
+    height: 160px;
+    left: 500px;
+    position: relative;
+    background: url(img/bg-main1.png) no-repeat;
+    animation: myani2 5s alternate infinite ease-out;
+}
+
+@keyframes myani2 {
+    0% {
+        left: 300px;
+        top: 0px;
+    }
+    100% {
+        left: 300px;
+        top: 400px;
+    }
+    
+}
+</style>
+</head>
+<body>
+    <div id="balloon1"></div>
+    <div id="balloon2"></div>
+</body>
+</html>
