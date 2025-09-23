@@ -1,0 +1,58 @@
+*{margin: 0; padding: 0;}
+ul li{list-style: none;}
+a{text-decoration: none; color: black;}
+
+.wrap{
+    width: 1200px;
+    /* height: 250px; */
+    margin: 0 auto;
+    /* background-color: lightseagreen; */
+    position: relative;
+    
+}
+header{
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+}
+.banner{
+    background-color: gainsboro;
+    width: 1000px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+}
+.banner_L{
+    width: 100px;
+    top: 0;
+    /* position: absolute; */
+    
+}
+.banner_L>li{
+    float: left;
+}
+.banner_R{
+    width: 100px;
+    top: 0;
+    right: 0px;
+    position: absolute;
+}
+.banner img{
+    width: 100px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+/* -------------------------- */
+.gnb{
+    width: 100%;
+    float: left;
+    display: block;
+    position: absolute;
+    top: 0;
+}
