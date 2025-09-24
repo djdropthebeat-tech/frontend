@@ -1,58 +1,51 @@
-*{margin: 0; padding: 0;}
-ul li{list-style: none;}
-a{text-decoration: none; color: black;}
-
-.wrap{
-    width: 1200px;
-    /* height: 250px; */
-    margin: 0 auto;
-    /* background-color: lightseagreen; */
-    position: relative;
-    
-}
-header{
-    width: 1200px;
-    height: 400px;
-    margin: 0 auto;
-}
-.banner{
+\.banner {
     background-color: gainsboro;
     width: 1000px;
     height: 200px;
     margin: 0 auto;
     padding: 10px;
     box-sizing: border-box;
-    position: relative;
-    text-align: center;
-}
-.banner_L{
-    width: 100px;
-    top: 0;
-    /* position: absolute; */
-    
-}
-.banner_L>li{
-    float: left;
-}
-.banner_R{
-    width: 100px;
-    top: 0;
-    right: 0px;
-    position: absolute;
-}
-.banner img{
-    width: 100px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
+
+    /* Flexbox 적용 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* -------------------------- */
-.gnb{
-    width: 100%;
-    float: left;
-    display: block;
-    position: absolute;
-    top: 0;
+/* 각 블록 너비 */
+.banner_L, .banner_R, .logo {
+    flex: 1;
+}
+
+/* 좌우 정렬 */
+.banner_L {
+    text-align: left;
+}
+.banner_R {
+    text-align: right;
+}
+.logo {
+    text-align: center;
+}
+
+/* 내부 항목 정렬 */
+.banner_L li,
+.banner_R li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+/* 리스트 초기화 */
+ul {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+
+/* 로고 이미지 */
+.logo img {
+    width: 100px;
+    vertical-align: middle;
 }
