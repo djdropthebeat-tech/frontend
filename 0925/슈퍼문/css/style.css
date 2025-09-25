@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One&display=swap');
+*{margin: 0; padding: 0;}
+ul li{list-style: none;}
+a{text-decoration: none;}
+#wrap{
+    float: left;
+}
+header{
+    position: fixed;
+    width: 15%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    background-color: navy;
+}
+header .logo a img{
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: 120px auto 250px;
+}
+header .gnb li{
+    margin:35px 150px;
+    right: 30px;
+}
+header .gnb li a{
+    color: #fff;
+    font-family:'Poiret One';
+    font-size: 18px;
+    
+}
+
+header .bottom{
+    width: 100%;
+    /* height: 100px; */
+    bottom: 100px;
+    position: absolute;
+    text-align: center;
+}
+header .bottom ul{
+    width: 300px;
+    height: 20px;
+    left: 50%;
+    margin-left: -150px;
+    position: relative;
+    display: flex
+}
+
+header .bottom ul:nth-child(1){
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 20px 80px;
+
+}
+header .bottom ul:nth-child(2){
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 20px 50px;
+
+}
+header .bottom .snsSet li:nth-child(1){
+    height: 30px;
+    border-right: 1px solid #fff;
+}
+header .bottom li a{
+    width: 30%;
+    color: #fff;
+    font-family:'Poiret One';
+    font-size: 12px;
+    margin: 10px;
+    padding: 10px;
+}
+
+header .bottom li i{
+    font-size: 25px;
+}
+/* ------------------------------ */
+section{
+    width: 85%;
+    height: 100%;
+    left: 15%;
+    position: relative;
+    background-color: plum;
+}
+article{
+    position: relative;
+    float: left;
+    height: 280px;
+}
+article:nth-child(1){width: 60%;background-color: navy; height: 560px;}
+article:nth-child(2){width: 40%;background-color: #ccc;}
+article:nth-child(3){width: 20%;background-color: #bbb;}
+article:nth-child(4){width: 20%;background-color: #aaa;}
+
+article:nth-child(5){width: 20%;background-color: #999;}
+article:nth-child(6){width: 40%;background-color: #888;}
+article:nth-child(7){width: 20%;background-color: #777;}
+article:nth-child(8){width: 20%;background-color: #666;}
+
+article:nth-child(9){width: 40%;background-color: #555;}
+article:nth-child(10){width: 20%;background-color: #444;}
+article:nth-child(11){width: 20%;background-color: #333;}
+article:nth-child(12){width: 20%;background-color: #222;}
+
+/* -=------------ */
+article:nth-child(1){
+    background: url(../images/1.png) no-repeat 0 0 /cover;
+}
