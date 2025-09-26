@@ -89,23 +89,138 @@ article{
     position: relative;
     float: left;
     height: 280px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
 }
 article:nth-child(1){width: 60%;background-color: navy; height: 560px;}
-article:nth-child(2){width: 40%;background-color: #ccc;}
-article:nth-child(3){width: 20%;background-color: #bbb;}
+article:nth-child(2){width: 40%;background-color: #fff;}
+article:nth-child(3){width: 20%;background-color: #fff;}
 article:nth-child(4){width: 20%;background-color: #aaa;}
 
 article:nth-child(5){width: 20%;background-color: #999;}
-article:nth-child(6){width: 40%;background-color: #888;}
+article:nth-child(6){width: 40%;background-color: #fff;}
 article:nth-child(7){width: 20%;background-color: #777;}
-article:nth-child(8){width: 20%;background-color: #666;}
+article:nth-child(8){width: 20%;background-color: #fff;}
 
 article:nth-child(9){width: 40%;background-color: #555;}
-article:nth-child(10){width: 20%;background-color: #444;}
-article:nth-child(11){width: 20%;background-color: #333;}
-article:nth-child(12){width: 20%;background-color: #222;}
+article:nth-child(10){width: 20%;background-color: #010620 ;}
+article:nth-child(11){width: 20%;background-color: #fff;}
+article:nth-child(12){width: 20%;background-color: #7bff00;}
 
 /* -=------------ */
 article:nth-child(1){
-    background: url(../images/1.png) no-repeat 0 0 /cover;
+    background: navy url(../images/1.png) no-repeat 0 0 /cover;
+}
+article:nth-child(4){
+    background: url(../images/3.png) no-repeat 50% 50%/cover;
+}
+article:nth-child(5){
+    background: url(../images/4.jpg) no-repeat 50% 50%/ 600px 320px ;
+    /* background-position: ; */
+}
+article:nth-child(7){
+    background: url(../images/5.jpg) no-repeat 0 0 /cover;
+}
+article:nth-child(9){
+    background: url(../images/6.jpg) no-repeat 0 0 /cover;
+}
+article:nth-child(10){
+    background:#010620 url(../images/7.jpg) no-repeat -85px 0px /cover;
+}
+article:nth-child(12){
+    background: #7bff00 url(../images/8.png) no-repeat 0 0 /cover;
+}
+/* ------------------------------------------ */
+article .txt i{
+    font-size: 200px;
+    color: #777;
+    right: -10px;
+    bottom: -10px;
+    position: absolute;
+}
+article .txt4 i{
+    color: #fff;
+}
+article .txt5 i{
+    color: #fff;
+}
+article strong{
+    display: flex;
+    font-size: 30px;   
+    margin-bottom: 20px; 
+    color: #333;
+}
+article p{
+    padding: 25px;
+    padding-bottom: 10px;
+    z-index: 10;
+
+}
+/* ------------------------------------------------------------ */
+
+article .bg span{
+    font-size: 65px;
+    right: 5%;
+    bottom: 0;
+    position: absolute;
+    color: #555;
+    transition: all 0.6s;
+    opacity: 0;
+}
+article:hover .bg span{
+    transform: scale(1);
+    opacity: 1;
+}
+article .bg .span1{
+    font-size: 100px;
+    right: 5%;
+    bottom: 0;
+    position: absolute;
+    color: #000;
+    opacity: 0;
+    transform: scale(1) rotateY(0deg);
+    transition: all 0.8s;
+
+}
+
+article:hover .bg .span1{
+     transform: scale(1) rotateY(360deg);
+     color: #000;
+     opacity: 09;
+}
+
+article .txt1 img{
+    position: absolute;
+    height: 90%;
+    right: -300px;
+    bottom: 10px;
+    opacity: 0.5;
+    transition: all 0.6s;
+}
+article:hover .txt1{
+    right: 0px;
+    bottom: 0;
+}
+article:hover .txt1{
+    right: 0px;
+    bottom: 0;
+}
+article:hover .txt2 p strong{
+    color: #fff;
+    opacity: 0.7;
+}
+
+article:hover .txt2 i{
+    color: #fff;
+opacity: 0.7;
+}
+article:nth-child(2):hover{
+    background-color: rgb(108, 197, 233);
+    transition: all 0.3s;
+}
+article:nth-child(3):hover{
+    background-color: rgb(20, 220, 255);
+    transition: all 0.3s;
 }
