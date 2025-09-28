@@ -92,6 +92,7 @@ article{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    overflow: hidden;
 
 }
 article:nth-child(1){width: 60%;background-color: navy; height: 560px;}
@@ -109,7 +110,7 @@ article:nth-child(10){width: 20%;background-color: #010620 ;}
 article:nth-child(11){width: 20%;background-color: #fff;}
 article:nth-child(12){width: 20%;background-color: #7bff00;}
 
-/* -=------------ */
+/* ------------------------------------------ */
 article:nth-child(1){
     background: navy url(../images/1.png) no-repeat 0 0 /cover;
 }
@@ -118,7 +119,6 @@ article:nth-child(4){
 }
 article:nth-child(5){
     background: url(../images/4.jpg) no-repeat 50% 50%/ 600px 320px ;
-    /* background-position: ; */
 }
 article:nth-child(7){
     background: url(../images/5.jpg) no-repeat 0 0 /cover;
@@ -133,41 +133,99 @@ article:nth-child(12){
     background: #7bff00 url(../images/8.png) no-repeat 0 0 /cover;
 }
 /* ------------------------------------------ */
-article .txt i{
-    font-size: 200px;
-    color: #777;
-    right: -10px;
-    bottom: -10px;
+article .txt{
+    height: 100%;
+    transition: all 0.4s;
+}
+article:hover .txt1{
+    background-color: rgb(31, 206, 212);
+}
+article:hover .txt2{
+    background-color: rgb(20, 220, 255);
+}
+article:hover .txt3{
+    background-color: rgb(254, 238, 66);
+}
+article:hover .txt4{
+    background-color: rgb(19, 187, 3);
+}
+article:hover .txt5{
+    background-color: rgb(54, 43, 36);
+}
+article .txt1 img{
     position: absolute;
+    height:90%;
+    right: -300px;
+    bottom: 15px;
+    transition: all 0.6s;
+    opacity: 0;
 }
-article .txt4 i{
-    color: #fff;
+article:hover .txt1 img{
+    right: 0;
+    opacity: 0.5;
 }
-article .txt5 i{
-    color: #fff;
-}
-article strong{
+
+article .txt strong{
     display: flex;
     font-size: 30px;   
     margin-bottom: 20px; 
     color: #333;
 }
-article p{
-    padding: 25px;
+article .txt p{
+    padding: 30px;
     padding-bottom: 10px;
     z-index: 10;
-
 }
-/* ------------------------------------------------------------ */
 
+article .txt i{
+    font-size: 200px;
+    color: #111;
+    right: -250px;
+    bottom: -10px;
+    position: absolute;
+    transition: all 0.6s;
+    opacity: 0.6;
+}
+article .txt2 i{
+    right: -10px;
+}
+article .txt4 i{
+    color: #fff;
+    opacity: 0.5;
+}
+article .txt5 i{
+    color: #fff;
+    opacity: 0.5;
+}
+
+article:hover .txt i{
+    right: -10px;
+}
+article:hover .txt2 p strong,
+article:hover .txt2 i{
+    color: #fff;
+}
+article:hover .txt4 p strong,
+article:hover .txt4 em{
+    color: #fff;
+}
+article:hover .txt5 p strong,
+article:hover .txt5 em{
+    color: #fff;
+}
+
+/* ------------------------------------------------------------ */
 article .bg span{
-    font-size: 65px;
+    font-size: 60px;
+    line-height: 65px;
     right: 5%;
     bottom: 0;
     position: absolute;
     color: #555;
+    transform:scale(10);
     transition: all 0.6s;
     opacity: 0;
+    
 }
 article:hover .bg span{
     transform: scale(1);
@@ -182,45 +240,11 @@ article .bg .span1{
     opacity: 0;
     transform: scale(1) rotateY(0deg);
     transition: all 0.8s;
-
 }
-
 article:hover .bg .span1{
      transform: scale(1) rotateY(360deg);
      color: #000;
-     opacity: 09;
+     opacity: 0.9;
 }
 
-article .txt1 img{
-    position: absolute;
-    height: 90%;
-    right: -300px;
-    bottom: 10px;
-    opacity: 0.5;
-    transition: all 0.6s;
-}
-article:hover .txt1{
-    right: 0px;
-    bottom: 0;
-}
-article:hover .txt1{
-    right: 0px;
-    bottom: 0;
-}
-article:hover .txt2 p strong{
-    color: #fff;
-    opacity: 0.7;
-}
 
-article:hover .txt2 i{
-    color: #fff;
-opacity: 0.7;
-}
-article:nth-child(2):hover{
-    background-color: rgb(108, 197, 233);
-    transition: all 0.3s;
-}
-article:nth-child(3):hover{
-    background-color: rgb(20, 220, 255);
-    transition: all 0.3s;
-}
