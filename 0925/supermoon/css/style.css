@@ -15,14 +15,23 @@ header{
     background-color: navy;
 }
 header .logo a img{
-    display: block;
+    /* display: flex; */
     width: 80%;
     height: auto;
-    margin: 120px auto 250px;
+    position: absolute;
+    left: 10%;
+    top:15%;
 }
+
+header .gnb{
+	position:absolute;
+	right: 20%;
+	top:25%;
+	/* transform:translate(-50%,-50%); */
+}
+
 header .gnb li{
-    margin:35px 150px;
-    right: 30px;
+    margin:35px 0;
 }
 header .gnb li a{
     color: #fff;
@@ -112,7 +121,7 @@ article:nth-child(12){width: 20%;background-color: #7bff00;}
 
 /* ------------------------------------------ */
 article:nth-child(1){
-    background: navy url(../images/1.png) no-repeat 0 0 /cover;
+    background: navy url(../images/1.png) no-repeat 50% 50% /cover;
 }
 article:nth-child(4){
     background: url(../images/3.png) no-repeat 50% 50%/cover;
@@ -121,16 +130,16 @@ article:nth-child(5){
     background: url(../images/4.jpg) no-repeat 50% 50%/ 600px 320px ;
 }
 article:nth-child(7){
-    background: url(../images/5.jpg) no-repeat 0 0 /cover;
+    background: url(../images/5.jpg) no-repeat 50% 50% /cover;
 }
 article:nth-child(9){
-    background: url(../images/6.jpg) no-repeat 0 0 /cover;
+    background: url(../images/6.jpg) no-repeat 50% 50% /cover;
 }
 article:nth-child(10){
-    background:#010620 url(../images/7.jpg) no-repeat -85px 0px /cover;
+    background:#010620 url(../images/7.jpg) no-repeat 50% 50% /cover;
 }
 article:nth-child(12){
-    background: #7bff00 url(../images/8.png) no-repeat 0 0 /cover;
+    background: #7bff00 url(../images/8.png) no-repeat 50% 50% /cover;
 }
 /* ------------------------------------------ */
 article .txt{
