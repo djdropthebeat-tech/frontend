@@ -69,25 +69,35 @@
 </html>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const tabButtons = document.querySelectorAll(".tab-link");
-    const tabContents = document.querySelectorAll(".tab-content");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const tabButtons = document.querySelectorAll(".tab-link");
+//     const tabContents = document.querySelectorAll(".tab-content");
 
-    tabButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            // 1. 모든 버튼에서 active 제거
-            tabButtons.forEach(btn => btn.classList.remove("active"));
+//     tabButtons.forEach(button => {
+//         button.addEventListener("click", () => {
+//             // 1. 모든 버튼에서 active 제거
+//             tabButtons.forEach(btn => btn.classList.remove("active"));
 
-            // 2. 클릭된 버튼에 active 추가
-            button.classList.add("active");
+//             // 2. 클릭된 버튼에 active 추가
+//             button.classList.add("active");
 
-            // 3. 모든 탭 내용에서 active 제거
-            tabContents.forEach(content => content.classList.remove("active"));
+//             // 3. 모든 탭 내용에서 active 제거
+//             tabContents.forEach(content => content.classList.remove("active"));
 
-            // 4. 클릭된 버튼의 data-tab 속성을 이용해 해당 탭 내용 보이기
-            const tabId = button.getAttribute("data-tab");
-            document.getElementById(tabId).classList.add("active");
-        });
-    });
-});
+//             // 4. 클릭된 버튼의 data-tab 속성을 이용해 해당 탭 내용 보이기
+//             const tabId = button.getAttribute("data-tab");
+//             document.getElementById(tabId).classList.add("active");
+//         });
+//     });
+// });
+
+document.querySelectorAll(".tab-link").forEach(btn =>
+  btn.onclick = () => {
+    document.querySelectorAll(".tab-link").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+
+    btn.classList.add("active");
+    document.getElementById(btn.dataset.tab).classList.add("active");
+  }
+);
 </script>
