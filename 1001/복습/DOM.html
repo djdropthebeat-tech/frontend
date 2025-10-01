@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 예제</title>
+</head>
+<body>
+
+<h2>동물 목록 출력 예제</h2>
+
+<!-- 버튼 -->
+<button id="showAnimalsBtn">동물 목록 보여주기</button>
+
+<!-- 결과가 나올 부분 -->
+<ul id="animalList"></ul>
+
+<script>
+    // 동물 배열
+    var animals = ["닭", "개", "돼지", "고양이", "소"];
+
+    // 버튼 요소 가져오기
+    var button = document.getElementById("showAnimalsBtn");
+
+    // 목록을 넣을 ul 요소 가져오기
+    var list = document.getElementById("animalList");
+
+    // 버튼 클릭 이벤트 등록
+    button.addEventListener("click", function() {
+        // 기존 목록 비우기
+        list.innerHTML = "";
+
+        // 동물 배열을 돌면서 <li> 생성 후 ul에 추가하기
+        for (var i = 0; i < animals.length; i++) {
+            var li = document.createElement("li");  // <li> 요소 만들기
+            li.textContent = (i+1) + "번째 동물은 " + animals[i] + "입니다.";
+            list.appendChild(li);  // ul에 <li> 붙이기
+        }
+    });
+</script>
+
+</body>
+</html>
