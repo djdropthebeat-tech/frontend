@@ -14,6 +14,7 @@
         margin: 0 auto;
         position: relative;
         background-color: lightslategrey;
+        overflow: hidden;
         
     }
     .slide{ 
@@ -24,7 +25,10 @@
         position: absolute;
         box-sizing: border-box;
     }
-
+    .slide li{
+        width: 1200px;
+        display: flex;
+    }
     p{
         width: 100%;
         height: 300px;
@@ -44,18 +48,74 @@
         <p>
             <a href="#" class="prev"><img src="images/prev_btn.png" alt=""></a>
             <a href="#" class="next"><img src="images/next_btn.png" alt=""></a>
-        <p>
+        </p>
         <ul class="slide">
-            <li><img src="images/slide1.jpg" alt=""></li>
-            <li><img src="images/slide2.jpg" alt=""></li>
-            <li><img src="images/slide3.jpg" alt=""></li>
+            <li><a href="#"><img src="images/slide1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/slide2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/slide3.jpg" alt=""></a></li>
         </ul>
     </div>
 
-    <script>
-        let
+<script>
+    let list = document.querySelector('.slide');
+    let listLi = document.querySelectorAll('.slide li');
+    let total = listLi.length;
+    let num = 0;
+    let liWidth = 1200;
+
+    let copyObj = listLi[0].cloneNode(true);
+    list.append(copyObj);
+    
+
+    document.querySelector('.next').addEventListener('click',function(e){
+        e.preventDefault();
+
+        if(num===total){
+            num=0;
+            list.style.transition = 'none';
+            list.style.marginLeft = 0;  
+        }
+
+        setTimeout(function(){
+            num++;
+            list.style.transition = 'margin-left 0.5s';
+            list.style.marginLeft = -liWidth * num + 'px';
+        },50);
+
+    });
+
+    document.querySelector('.prev').addEventListener('click', function(e){
+        e.preventDefault();
+
+        if(num === 0){
+            num=total;
+            list.style.transition = 'none';
+            list.style.marginLeft = -liWidth * num + 'px';
+        }
+
+        setTimeout(function(){
+            num--;
+            list.style.transition = 'margin-left 0.5s';
+            list.style.marginLeft = -liWidth * num + 'px';
+        },50);
+    });
 
 
-    </script>
+    function autoplay(){
+    if(num == total){
+        num = 0;
+        list.style.transition = 'none';
+        list.style.marginLeft = 0;
+    }
+    setTimeout(function(){
+        num++;
+        list.style.transition = 'margin-left 0.5s';
+        list.style.marginLeft = -liWidth * num + "px";
+    },50);
+}
+
+let intervalId = setInterval(autoplay,2700);
+
+</script>
 </body>
 </html>
