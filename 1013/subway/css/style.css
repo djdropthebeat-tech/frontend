@@ -9,6 +9,7 @@ body{overflow-x: hidden;}
 
 header{
     width: 100%;
+    height: 180px;
     min-width: 1440px;
     position: relative;
     margin: 0 auto;
@@ -30,26 +31,30 @@ header{
     border-bottom: 1px solid #d1d1d1;
     overflow: hidden;
     transition: all 0.3s;
+    background-color: #fff;
+    z-index: 9999;
+    
 }
 .menu:hover{
     height: 320px;
-    box-shadow: #686868;
+    /* box-shadow: 0px 5px 20px #555 ; */
 }
 .menu > ul {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     position: relative;
+    border-bottom: 1px solid #ccc;
+
 }
 
 .menu  ul > li{
-    display: inline-block;
-    vertical-align: top;
+    position: relative;
 }
 
 .dp1{
+    width: 170px;
     display: block;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     line-height: 60px;
     text-align: center;
@@ -59,49 +64,109 @@ header{
     color: green;
 }
 .dp2{
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 60px;
+    left: 0;
+    padding-top: 5px;
     text-align: center;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 9999;
+    
 }
 .dp2 ul li a {
+    font-size: 14px;
     display: block;
-    width: 200px;
+    width: 100%;
     height: 40px;
     color:#686868;
     line-height: 40px;
 }
 
 .dp2 ul li a:hover{
-    color: rgb(0, 136, 41);
+    color: green;
     text-decoration: underline;
-
 }
-
+.menu :hover .dp2{
+    height: 260px;
+    opacity: 1;
+}
 /* ----------------------------------- */
 .content{
     width: 100%;
     min-width: 1440px;
-    position: absolute;
-    margin: 0 auto;
+    position: relative;
+    /* margin: 0 auto; */
+    /* top: 190px; */
 }
 .slider{
     width: 100%;
     min-width: 1440px;
-    height: 500px;
+    height: 490px;
+    position: relative;
     
 }
-.slider ul{
-    position: relative;
-    display: flex;
-
-}
-.slider ul img{
+.slide_img li{
+    width: 100%;
     height: 440px;
+    position: absolute;
+    display: flex;
+}
+.s_img0{
+    left: 0;
+    background: url(../img/s1.jpg)no-repeat 50% 0;
+}
+.s_img1{
+    left: 100%;
+    background: url(../img/s2.jpg)no-repeat 50% 0;
+}
+.s_img2{
+    left: 200%;
+    background: url(../img/s3.jpg)no-repeat 50% 0;
+}
+.s_img3{
+    left: 300%;
+    background: url(../img/s4.jpg)no-repeat 50% 0;
+}
+.s_img4{
+    left: 400%;
+    background: url(../img/s5.jpg)no-repeat 50% 0;
+}
+.pager_list{
+    width: 200px;
+    height: 20px;
+    right: 12%;
+    bottom: 19%;
+    position: absolute;
+    display: flex;
+    z-index: 100;
+    /* background-color:pink; */
+    
+}
+.pager_list li{
+    width: 11px;
+    height: 11px;
+    border-radius: 7.5px;
+    background-color: #fff;
+    margin: 0 5px;
+    display: block;
+}
+.pager_list li.on{
+    width: 35px;
+    height: 11px;
+    background-color: gold;
+    transition: width 0.3s;
 }
 
+
+/* ------------------------------ */
 .quick_link{
     width: 600px;
     height: 80px;
     position: absolute;
-    right:15%;
+    right:12%;
     bottom: 0;
     z-index: 10;
     display: flex;
