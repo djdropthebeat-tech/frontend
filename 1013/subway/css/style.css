@@ -1,0 +1,138 @@
+*{margin: 0; padding: 0;}
+ul li{list-style: none;}
+a{text-decoration: none; color: #333;}
+body{overflow-x: hidden;}
+
+#wrap{
+    width: 100%;
+}
+
+header{
+    width: 100%;
+    min-width: 1440px;
+    position: relative;
+    margin: 0 auto;
+    border-top: 5px solid darkgreen;
+}
+.logo{
+    width: 200px;
+    height: auto;
+    margin: 40px auto;
+}
+.logo img{
+    width: 100%;
+}
+/* ----------------------------- */
+.menu{
+    width: 100%;
+    height: 60px;
+    position: relative;
+    border-bottom: 1px solid #d1d1d1;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.menu:hover{
+    height: 320px;
+    box-shadow: #686868;
+}
+.menu > ul {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.menu  ul > li{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.dp1{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+}
+
+.dp1:hover{
+    color: green;
+}
+.dp2{
+    text-align: center;
+}
+.dp2 ul li a {
+    display: block;
+    width: 200px;
+    height: 40px;
+    color:#686868;
+    line-height: 40px;
+}
+
+.dp2 ul li a:hover{
+    color: rgb(0, 136, 41);
+    text-decoration: underline;
+
+}
+
+/* ----------------------------------- */
+.content{
+    width: 100%;
+    min-width: 1440px;
+    position: absolute;
+    margin: 0 auto;
+}
+.slider{
+    width: 100%;
+    min-width: 1440px;
+    height: 500px;
+    
+}
+.slider ul{
+    position: relative;
+    display: flex;
+
+}
+.slider ul img{
+    height: 440px;
+}
+
+.quick_link{
+    width: 600px;
+    height: 80px;
+    position: absolute;
+    right:15%;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+}
+
+.store{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gold;
+    border-top-left-radius: 30px;
+    font-size: bold;
+}
+.store p{
+    font-weight: bold;
+    font-size: 21px;
+    margin-left: 15px;
+    color: #333;
+}
+.franchise{ 
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:green ;
+    border-bottom-right-radius: 30px;
+}
+.franchise p{
+    font-weight: bold;
+    font-size: 21px;
+    margin-left: 15px;
+    color: #fff;
+}
