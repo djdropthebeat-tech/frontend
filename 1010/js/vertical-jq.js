@@ -16,8 +16,11 @@ $(function(){
 
         // .m_menu안의 li 자식중에 a태그를 클릭하면
         var  status = $(this).next('.sub').css('display');
+            // .css('display') : css display의 속성이 none인지,block인지 판별하라.
+            // .css('display','none/block') 이렇게 쓰면 속성값을 지정하는 것임.
         // 클릭한 a 태그 안에 있는 요소 중 클래스가 sub인 요소의 display 속성값을 가져와서
         // status에 저장. 이 때 none: 현재 sub가 닫혀있는 상태 / block: 현재 서브가 열린상태
+        
         // alert(status);
         if(status ==='none'){
             $('.sub').slideUp();

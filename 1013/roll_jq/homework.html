@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{margin: 0; padding: 0;}
+    ul li{list-style: none;}
+
+    #slider_wrap{
+        width: 1200px;
+        height: 400px;
+        margin: 0 auto;
+        position: relative;
+        background-color: lightslategrey;
+        overflow: hidden;
+        
+    }
+    .slide{ 
+        width: 100%;
+        height: 300px;
+        margin-top:100px ;
+        display: flex;
+        position: absolute;
+        box-sizing: border-box;
+    }
+    .slide li{
+        width: 1200px;
+        display: flex;
+    }
+    p{
+        width: 100%;
+        height: 300px;
+        margin:100px 0;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        box-sizing: border-box;
+        z-index: 100;
+    }
+</style>
+</head>
+<body>
+    <div id="slider_wrap">
+        <p>
+            <a href="#" class="prev"><img src="images/prev_btn.png" alt=""></a>
+            <a href="#" class="next"><img src="images/next_btn.png" alt=""></a>
+        </p>
+        <ul class="slide">
+            <li><a href="#"><img src="images/slide1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/slide2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/slide3.jpg" alt=""></a></li>
+        </ul>
+    </div>
+
+<script>
+    let list = document.querySelector('.slide');
+    let listLi = document.querySelectorAll('.slide li');
+    let total = listLi.length;
+    let num = 0;
+    let liWidth = 1200;
+
+    let copyObj = listLi[0].cloneNode(true);
+    list.append(copyObj);
+    
+
+    document.querySelector('.next').addEventListener('click',function(e){
+        e.preventDefault();
+
+        if(num===total){
+            num=0;
+            list.style.transition = 'none';
+            list.style.marginLeft = 0;  
+        }
+
+        setTimeout(function(){
+            num++;
+            list.style.transition = 'margin-left 0.5s';
+            list.style.marginLeft = -liWidth * num + 'px';
+        },50);
+
+    });
+
+    document.querySelector('.prev').addEventListener('click', function(e){
+        e.preventDefault();
+
+        if(num === 0){
+            num=total;
+            list.style.transition = 'none';
+            list.style.marginLeft = -liWidth * num + 'px';
+        }
+
+        setTimeout(function(){
+            num--;
+            list.style.transition = 'margin-left 0.5s';
+            list.style.marginLeft = -liWidth * num + 'px';
+        },50);
+    });
+
+
+    function autoplay(){
+    if(num == total){
+        num = 0;
+        list.style.transition = 'none';
+        list.style.marginLeft = 0;
+    }
+    setTimeout(function(){
+        num++;
+        list.style.transition = 'margin-left 0.5s';
+        list.style.marginLeft = -liWidth * num + "px";
+    },50);
+}
+
+let intervalId = setInterval(autoplay,2700);
+
+</script>
+</body>
+</html>
