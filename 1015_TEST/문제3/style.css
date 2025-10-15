@@ -1,0 +1,33 @@
+*{margin: 0; padding: 0;}
+body{background-color: #333;}
+dl{
+    width: 800px;
+    margin: 100px auto 0;
+}
+
+dt{
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-indent: 30px;
+    background: url(images/a1.jpg)no-repeat 0 0/ cover;
+}
+dt.over{
+    background: url(images/a2.jpg)no-repeat 0 0 / cover;
+    cursor: pointer;
+}
+dt.on{
+    background: url(images/a3.jpg)no-repeat 0 0/ cover;
+}
+
+dd{
+    height: 330px;
+    background-color: #cecece;
+}
+
+dd p{
+    text-indent: 1em;
+    padding: 20px;
+}
