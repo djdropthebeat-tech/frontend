@@ -1,0 +1,40 @@
+*{margin: 0; padding: 0;}
+ul li{list-style: none;}
+
+.tab{
+    width: 400px;
+    padding: 10px;
+    
+
+}
+.tab_menu{
+    width: 400px;
+    display: flex;
+    border-bottom: 2px solid #333;
+    
+}
+.tab_menu li{
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+.tab_menu li.on{
+    border-bottom: 2px solid darkslateblue;
+    color: darkslateblue;
+}
+
+
+.tab_list li{
+    display: none;
+    line-height: 35px;
+    margin-top: 15px;
+}
+.tab_list li.on{
+    display: block;
+}
+
+.tab_list li div{
+    margin-left: 10px;
+}
