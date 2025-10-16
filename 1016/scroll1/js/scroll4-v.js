@@ -1,26 +1,37 @@
 $(function(){
 
-    // var f_top = 250;
-    // var f_top = $('#float_div').offset().top;
-    // var d_Left = $('#float_div').offset().left;
-    var f_left =  $('section > article').eq(0).offset().left;
+
+    var d_left = $('#float_div').offset().left;
     // alert(f_top);
     
+    $('nav ul li').click(function(){
+            var i = $(this).index();  //li의 인덱스 번호
+            var offset_t = $('section> article').eq(i).offset().left;
 
+            $('html,body').stop().animate({scrollLeft:offset_t},1000);
+            $('nav ul li').removeClass('on');
+            $('nav ul li').eq(i).addClass('on');
+            
+            return false;
+    });
 
     $(window).scroll(function(){
         let sct = $(this).scrollLeft();
         $('#s_Top').text(sct);
-        $('#float_div').stop().animate({left:f_left+sct},500)
-
+        $('#float_div').stop().animate({left:d_left+sct},500)       
+        if(sct > 0){
+            $('nav').addClass('on');
+        } else {
+            $('nav').removeClass('on')
+        }
 
         if(sct>=$('section> article').eq(0).offset().left){
             //클릭하면 nav 이름 색 바뀜
             $('nav ul li').removeClass('on');
-            $('nav ul li').eq(0).addClass('on');
+            $('nav ul li').eq(i).addClass('on');
             //버튼 색 바뀜
             $('#float_div ul li').removeClass('on');
-            $('#float_div ul li').eq(0).addClass('on');
+            $('#float_div ul li').eq(i).addClass('on');
         }
 
         // 간단하게 for 문으로 작성하는 방법
@@ -42,23 +53,16 @@ $(function(){
 
     });
     // nav 이름 클릭하면 해당페이지로 이동
-    $('nav ul li').click(function(){
-        var i = $(this).index();  //li의 인덱스 번호
-        var offset_t = $('section> article').eq(i).offset().left;
-        $('html,body').stop().animate({scrollLeft:offset_t},1000);
-        // $('nav ul li').removeClass('on');
-        // $('nav ul li').eq(i).addClass('on');
-        
-        return false;
-    });
+  
 
 
     // 버튼 클릭하면 해당페이지로 이동
      $('#float_div ul li').click(function(){
-        var i = $(this).index();  //li의 인덱스 번호
-        var offset_t = $('section> article').eq(i).offset().left;
+        let i = $(this).index();  //li의 인덱스 번호
+        let offset_t = $('section > article').eq(i).offset().left;
         $('html,body').stop().animate({scrollLeft:offset_t},1000);
-        
+        $('nav ul li').removeClass('on');
+        $('nav ul li').eq(i).addClass('on');
         return false;
     });
 
@@ -79,49 +83,6 @@ $(function(){
 
     });
 
-    $('#popup').draggable();
-    // 드래그 가능
-
-    // 나중에 pop=no를 넣어 하루동안 저장 예정
-    // 처음에는 pop변수도 없고 no 도 없음
-    if($.cookie('pop')!=='no'){
-        $('#popup').show();
-        //쿠키 pop변수에 no란 단어가 없다면 팝업을 보여준다.
-    }
-    $('#popup area:eq(0)').click(function(){
-        $('#popup').fadeOut('fast');
-        // 닫기 버튼을 클릭하면 팝업을 숨긴다.
-    });
-    $('#popup area:eq(1)').click(function(){
-        
-        $.cookie('pop','no',{expires:1});
-        $('#popup').fadeOut('fast');
-        // 닫기 버튼을 클릭하면 팝업을 숨긴다.
-    });
-
-
-
-    $('#notice_wrap').draggable();
-
-    if($.cookie('popup')=='none'){
-        $('#notice_wrap').hide();
-    }
-    //('popup')변수에 none이 저장돼있으면
-    // $('#notice_wrap')을 숨겨라
-
-    let chk = $('#expiresChk');
-    $('.closeBtn').on('click',closePop);
-
-    function closePop(){
-        if(chk.is(':checked')){  //chk에 체크가 돼있으면
-            $.cookie('popup','none', {expires:3});
-            //쿠키에 popup에 none을 가지고 3일의 기한을 가진다
-        }
-        $('#notice_wrap').fadeOut();
-    }
-    // 방법 2: .prop('checked')가 true인지 확인
-
-    // if (chk.prop('checked')) {
-    // ...
+ 
 
 });
