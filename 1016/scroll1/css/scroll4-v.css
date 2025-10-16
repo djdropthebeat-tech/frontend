@@ -31,7 +31,7 @@ nav ul li{
 }
 nav ul li a{
     display: block;
-    width: 200px;
+    width: 250px;
     height: 100px;
     line-height: 100px;
     font-size: 32px;
@@ -46,12 +46,14 @@ nav ul li.on a{
 
 .section{
     width: 100%;
+    min-width: 1440px;
     height: 100vh;
     position: absolute;
+    display: flex;
 }
 
 article{
-    width:100%;
+    width:100vw;
     height:100vh;
     position: absolute;
 }    
@@ -74,13 +76,14 @@ article{
     left: 300%;
 }
 
+
 #float_div{
     width: 70px;
-    height: 250px;
+    height: 210px;
     background-color: dimgray;
     padding-top: 10px;
-    position: relative;
-    right: 500px;
+    position: absolute;
+    right: 50px;
     top: 250px;
 }
 #float_div ul li{
@@ -96,36 +99,4 @@ article{
 #float_div ul li.on{
     background-color: orange;
 }
-
-/* #popup{
-    width: 301px;
-    height: 351px;
-    position: absolute;
-    top: 210px;
-    left: 50px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0,0.5);
-    display: none;
-}
-
-#notice_wrap{
-    width: 301px;
-    position: absolute;
-    top: 210px;
-    left: 400px;
-    box-shadow: 0 0 8px #000;
-    font-size: 12px;
-}
-#notic_wrap img{
-    float: left;
-}
-.closeWrap{
-    background-color: #000;
-    color: #fff;
-    text-align: right;
-    padding: 5px 10px;
-}
-.closeWrap button{
-    margin-left: 20px;
-    cursor: pointer;
-} */
 
