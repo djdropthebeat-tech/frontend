@@ -260,7 +260,6 @@ header .gnb{
     padding: 80px 0 40px;
     background:url(../img/sec2_bg.jpg);
     box-sizing: border-box;
-    /* s2 전체 크기 지정 및 배경 이미지 */
 }
 .s3_title{
     width: 1000px;
@@ -287,25 +286,72 @@ header .gnb{
     width: 194px;
     height: 200px;
     margin-top: 30px;
-    margin-right: 3px;
+    margin-right: 6px;
     box-sizing: border-box;
     float: left;
     text-align: center;
     padding: 30px;
-    background-color: #fff;
+    background-color: #fff;;
+}
+.s3_table li:hover{
+    border: 1px solid #000;
+}
+.s3_table li a p{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 80%;
 }
 .s3_table li:nth-child(1){
-    background: url(../img/sec02_icon.png)no-repeat 50% 50%;
+    background: #fff url(../img/sec02_icon.png)no-repeat 50% 40% ;
 }
 .s3_table li:nth-child(2){
-    background: url(../img/sec02_icon.png)no-repeat 50% 50%;
+    background:#fff url(../img/sec02_icon2.png)no-repeat 50% 40%;
 }
 .s3_table li:nth-child(3){
-    background: url(../img/sec03_icon.png)no-repeat 50% 50%;
+    background:#fff url(../img/sec02_icon3.png)no-repeat 50% 40%;
 }
 .s3_table li:nth-child(4){
-    background: url(../img/sec04_icon.png)no-repeat 50% 50%;
+    background:#fff url(../img/sec02_icon4.png)no-repeat 50% 40%;
 }
 .s3_table li:nth-child(5){
-    background: url(../img/sec05_icon.png)no-repeat 50% 50%;
+    background:#fff url(../img/sec02_icon5.png)no-repeat 50% 40%;
+}
+/* ---------------------------------------------- */
+#s4{
+    height: 635px;
+    padding: 80px 0 40px;
+    background:url(../img/sec3_bg.jpg);
+    box-sizing: border-box;
+}
+.s4_title{
+    width: 1000px;
+    height: 180px;
+    text-align: center;
+    margin: 0 auto ;
+}
+.s4_title h2{
+    font-size: 48px;
+    margin-top: 20px;
+    color: #65B07E;
+}
+.s4_title p{
+    font-size: 16.5px;
+    line-height: 30px;
+    margin:  30px 0 40px;
+}
+.s4_table{
+    width: 1000px;
+    height: 250px;
+    margin: 40px auto 0;
+}
+.s4_table li{
+    width: 194px;
+    height: 200px;
+    margin-top: 30px;
+    margin-right: 6px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;;
 }
