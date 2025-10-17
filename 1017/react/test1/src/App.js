@@ -12,7 +12,7 @@ function App(){
       <p className='count'>현재 카운트 : {count}</p>
       <div className='buttons'>
         <button className='btn' onClick = {()=>setCount(count+1)}> +1증가</button>
-        <button className='btn' onClick = {()=>setCount(count-1)}> +1증가</button>
+        <button className='btn' onClick = {()=>setCount(count-1)}> -1감소</button>
                           {/*setCount :count를 변경할 수 있음 */}
       </div>
     </div>
