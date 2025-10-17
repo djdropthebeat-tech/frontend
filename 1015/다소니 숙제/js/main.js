@@ -26,12 +26,16 @@ $(function(){
     });
 
     let a1 = $('.s2_title img').offset().top;
+    let b1 = $('.s4_title img').offset().top;
     //이미지
     let a2 = $('.s2_title h2').offset().top;
+    let b2 = $('.s4_title h2').offset().top;
     //제목
     let a3 = $('.s2_title p').offset().top;
+    let b3 = $('.s4_title p').offset().top;
     // 내용
     let a4 = $('.s2_table li').offset().top;
+    let b4 = $('.s4_table li').offset().top;
     console.log(a1,a2,a3,a4);
 
     $(window).scroll(function(){
