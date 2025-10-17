@@ -37,9 +37,17 @@ $(function(){
     let a4 = $('.s2_table li').offset().top;
     let b4 = $('.s4_table li').offset().top;
     console.log(a1,a2,a3,a4);
-
+    console.log(b1,b2,b3,b4);
+    
+    let c = $('.s5_inner').offset().top;
+    let d = $('.s6_content').offset().top;
+    let f = $('.fix_box').offset().top;
+    
+    
     $(window).scroll(function(){
         let sct = $(this).scrollTop();
+        $('.fix_box').stop().animate({top:f+sct},500)
+
         if(a1 <= sct + 700){
             $('.s2_title img').addClass('slide');
         }
@@ -49,8 +57,6 @@ $(function(){
         if(a3 <= sct + 700){
             $('.s2_title p').addClass('slide');
         }
-        
-        
         if(a4 <= sct + 700){
             $('.s2_table li').eq(0).addClass('slide');
             
@@ -63,6 +69,37 @@ $(function(){
             setTimeout(function(){
                 $('.s2_table li').eq(3).addClass('slide');
             },900)
+        }
+
+
+        if(b1 <= sct + 700){
+            $('.s4_title img').addClass('slide');
+        }
+        if(b2 <= sct + 700){
+            $('.s4_title h2').addClass('slide');
+        }
+        if(b3 <= sct + 700){
+            $('.s4_title p').addClass('slide');
+        }
+        if(b4 <= sct + 700){
+            $('.s4_table li').eq(0).addClass('slide');
+            
+            setTimeout(function(){
+                $('.s4_table li').eq(1).addClass('slide');
+            },300)
+            setTimeout(function(){
+                $('.s4_table li').eq(2).addClass('slide');
+            },600)
+            setTimeout(function(){
+                $('.s4_table li').eq(3).addClass('slide');
+            },900)
+        }
+
+        if(c <= sct + 500){
+            $('.s5_inner').addClass('slide1');
+        }
+        if(d <= sct + 500){
+            $('.s6_content').addClass('slide1');
         }
     });
 });
