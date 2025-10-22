@@ -77,11 +77,16 @@ const [inputs, setInputs] = useState({
     //일치하지 않으면(X) 해당 user객체는 그대로 반환
     //  active : !user.active   -> active 값을 반대로 뒤집기 true -> false 로 false -> true
 
-  
+  // 👇 이 부분이 새로 추가된 테스트용 state입니다.
+  const [visible, setVisible] = useState(true);
+
 
   return (
     <div>
-      
+      <button onClick={() => setVisible(!visible)}>
+        {visible ? 'UserList 숨기기' : 'UserList 보이기'}
+      </button>
+
        <CreateUser
         username={username}
         email={email}
@@ -91,9 +96,9 @@ const [inputs, setInputs] = useState({
       />
 
       {/* <UserList2 users={users} onRemove={onRemove} onToggle={onToggle} /> */}
-     
-      <UserList2 users={users} onRemove={onRemove} onToggle={onToggle} />
-      
+     {visible && (
+        <UserList2 users={users} onRemove={onRemove} onToggle={onToggle} />
+      )}
     </div>
   )
 }
