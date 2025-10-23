@@ -1,0 +1,46 @@
+.container-fluid{
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.navbar-nav{
+    margin-right: 10px;
+}
+.navbar-nav a {
+    font-size: 14px;
+    color: #000;
+}
+.dropdown-menu{
+    width: 80px !important;
+    border-radius:0;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    
+}
+.dropdown-menu[data-bs-popper]{
+    margin-top: 0;
+    width: 80px;
+}
+.btn{
+    font-size: 14px;
+    border-radius: 0;
+    border: 1px solid #000;
+    color: #000;
+    margin-left: 15px;
+}
+.btn:hover{
+    background-color: #000;
+    border: 1px solid #fff;
+    color: #fff;
+    
+}
+.carousel-caption{
+    padding: 0;
+    bottom: 25%;
+    }
+.carousel-caption h1{
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
