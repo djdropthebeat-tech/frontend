@@ -86,10 +86,10 @@ useEffect(()=>{
         <div className="section-content">
           <h2 className="slide-in-left">About Us</h2>
           <p className="slide-in-left">스크롤할 때마다 부드러운 효과가 적용됩니다.</p>
-          <div className="cards">
-            <div className="card card-fade">Card 1</div>
-            <div className="card card-fade">Card 2</div>
-            <div className="card card-fade">Card 3</div>
+          <div className="cards-about">
+            <div className="card card-about card-fade">Card 1</div>
+            <div className="card card-about card-fade">Card 2</div>
+            <div className="card card-about card-fade">Card 3</div>
           </div>
         </div>
       </section>

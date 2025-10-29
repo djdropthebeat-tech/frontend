@@ -1,5 +1,5 @@
 .projects-section {
-  padding: 5rem 1rem;
+  padding: 5rem 10rem;
 }
 
 .projects-grid {
@@ -44,6 +44,9 @@
 
 .project-card:hover .project-image{
     transform: scale(1.1);
+}
+.project-content{
+  padding: 1.2rem;
 }
 .project-overlay {
     position: absolute;
