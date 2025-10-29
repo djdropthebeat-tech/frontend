@@ -87,14 +87,13 @@ export default function App() {
     idRef.current +=1;
 };
 
-  const onUpdate = (targetId) => {
+  const onUpdate = useCallback((targetId)=>{
     dispatch({type:"UPDATE",targetId});
-};
+  },[]);
 
-  const onDelete = (targetId)=>{
+  const onDelete = useCallback((targetId)=>{
     dispatch({type:"DELETE",targetId});
-  };
-
+  },[])
 
   return (
     <div className='App'>
