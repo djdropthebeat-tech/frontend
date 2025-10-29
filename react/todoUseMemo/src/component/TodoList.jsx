@@ -61,3 +61,7 @@ const {totalCount,doneCount,notDoneCount} =analyzeTodo;
     </div>
   )
 }
+// todo - 데이터 변경시에만 usememo가 실행
+
+// callback 함수를 (Memoziation)해서 불필요하게 다시 생성되지 않게하는 리액트 훅
+// 컴포넌트가 다시 렌더링 될 떄 함수를 새로 만들지 않도록 캐싱하는 기능
