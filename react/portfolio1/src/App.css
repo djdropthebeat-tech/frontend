@@ -56,9 +56,9 @@
 section{
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
-  padding: 80px 20px;
+  padding: 120px 20px;
 }
 .section-hero{
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -94,7 +94,9 @@ section{
   line-height: 1.8;
   margin-bottom: 2rem;
 }
-
+.section-content-about{
+  max-width: 1900px;
+}
 /* Animation Classes */
 .fade-in {
   animation: fadeIn 1s ease-in-out;
@@ -180,6 +182,20 @@ section{
 .card-fade{
   animation:fadeIn 1s ease-in-out 0.5s both;
 }
+
+
+.cards-about{
+  display: grid;
+   grid-template-columns: repeat(3, 1fr);
+  gap:2rem;
+  margin-top: 1rem;
+}
+
+.card-about{
+  width: 400px;
+  height: 700px;
+}
+
 /* portfolio-swiper */
 .section-container{
   width: 100%;
