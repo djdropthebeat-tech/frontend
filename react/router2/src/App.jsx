@@ -5,7 +5,7 @@ import "./App.css";
 import About from "./pages/About";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
-import Slider from "./pages/Slider";
+// import Slider from "./pages/Slider";
 
 export default function App() {
   return (
@@ -21,7 +21,7 @@ export default function App() {
           <Link to="/contact">연락처</Link>
         </div>
       </nav>
-      <Slider/>
+      {/* <Slider/> */}
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
