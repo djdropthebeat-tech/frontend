@@ -5,21 +5,12 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
+import Navbar from "./pages/Navbar";
 
 export default function App() {
   return (
     <div className="app">
-      <nav className="navbar">
-        <Link to="/" className="logo">
-          React Router
-        </Link>
-        <div className="nav-links">
-          <Link to="/">홈</Link>
-          <Link to="/about">소개</Link>
-          <Link to="/products">상품</Link>
-          <Link to="/contact">연락처</Link>
-        </div>
-      </nav>
+      <Navbar/>
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
