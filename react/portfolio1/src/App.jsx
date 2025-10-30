@@ -83,7 +83,7 @@ useEffect(()=>{
       </section>
 
       <section ref={aboutRef} className="section section-about">
-        <div className="section-content">
+        <div className="section-content-about">
           <h2 className="slide-in-left">About Us</h2>
           <p className="slide-in-left">스크롤할 때마다 부드러운 효과가 적용됩니다.</p>
           <div className="cards-about">
