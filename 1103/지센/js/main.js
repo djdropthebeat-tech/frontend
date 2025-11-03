@@ -16,6 +16,7 @@ $(function(){
     $('.mobile_tab').click(function(){
         $(this).toggleClass('active');
         $('.mobile_nav').toggleClass('active');
+        $('.moblie_tab_bc').toggleClass('active');
     });
 });
 

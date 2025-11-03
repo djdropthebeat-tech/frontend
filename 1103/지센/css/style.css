@@ -56,7 +56,6 @@ img {
    height: 78px;
 }
 
-
 .mobile_tab{
     /* display: none; */
     position: absolute;
@@ -71,15 +70,29 @@ img {
 }
 .mobile_tab.active{
     position: absolute;
+    right: 235px;
     z-index: 999;
 }
+
 .mobile_tab a {
     display: block;
     width: 28px;
 }
+.moblie_tab_bc{
+   position: absolute;
+   width: 100%;
+   height: 100vh;
+   background: #000;
+   opacity: 0;
+   z-index: 100;
+   transition: all 0.3s;
+}
+.moblie_tab_bc.active{
+   opacity: 0.4;
+}
 .mobile_nav{
-    opacity: 0;
-    visibility: hidden;
+    /* opacity: 0; */
+    /* visibility: hidden; */
     position: fixed;
     top: 0;
     right: -220px;
@@ -94,8 +107,8 @@ img {
     transition: all 0.4s;
 }
 .mobile_nav.active{
-    opacity: 1;
-    visibility: visible;
+    /* opacity: 1; */
+    /* visibility: visible; */
     right: 0;
 }
 
