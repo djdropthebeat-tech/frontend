@@ -57,7 +57,7 @@ img {
 }
 
 .mobile_tab{
-    /* display: none; */
+    display: none;
     position: absolute;
     right: 15px;
     /* top: 15px; */
@@ -78,18 +78,22 @@ img {
     display: block;
     width: 28px;
 }
-.moblie_tab_bc{
+/* 아래쪽에 transparency로 새로만듦 */
+/* .moblie_tab_bc{
    position: absolute;
    width: 100%;
    height: 100vh;
    background: #000;
    opacity: 0;
+   visibility: hidden;
    z-index: 100;
    transition: all 0.3s;
 }
 .moblie_tab_bc.active{
    opacity: 0.4;
-}
+   visibility: visible;
+} */
+
 .mobile_nav{
     /* opacity: 0; */
     /* visibility: hidden; */
@@ -199,30 +203,30 @@ img {
 }
 
 
+/* pc nav */
 .nav{
     position: relative;
 }
 .nav > ul{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 54px;
-    overflow: hidden;
-    transition: height 0.3s;
-    background: url(../images/bg_gnb.gif) repeat-x 0 0;
-    text-align: center;
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 54px;
+   overflow: hidden;
+   transition: height 0.3s;
+   background: url(../images/bg_gnb.gif) repeat-x 0 0;
+   text-align: center;
 }
-.nav > ul:hover{
-    height: 185px;
+.nav > ul.over{
+   height: 185px;
 }
 .nav > ul > li{
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
-    margin-left: 61px;
+   display: inline-block;
+   vertical-align: top;
+   position: relative;
+   margin-left: 61px;
 }
-
 .nav > ul > li > a {
    display:block;
    padding:0 30px;
@@ -261,5 +265,99 @@ img {
 }
 .nav .sub a:hover{
    text-decoration:underline;
+}
+/* hero */
+.hero{
+   margin-top: 54px;
+}
+.hero img{
+   width: 100%;
+   height: auto;
+}
+.transparency{
+   display: none;
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 130;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0,0,0,0.4);
+}
+.transparency.active{
+   display: block;
+}
+
+@media screen and (max-width:1050px){
+   .header{
+      width: 826px;
+   }
+   .header .signature{
+      margin-left: 146px;
+   }
+   .nav li:nth-child(6){
+      display: none;
+   }
+   .nav li:nth-child(5) a {
+      padding-right: 0;
+   }
+}
+
+@media screen and (max-width:850px){
+   .header{
+      width: auto;  /*width:100%*/
+      height: 72px;
+   }
+   .header .social{
+      margin: 23px 0 24px 20px;
+      width: 90px;
+   }
+   .header .social .mileage_btn{
+      display: none;
+   }
+   .header .signature{
+      position: absolute;
+      left: 50%;
+      top: 0;
+      float: none;
+      margin-left: -50px;
+      width: 100px;
+      height: 54px;
+      /* 로고 정중앙 */
+   }
+   .header .location{
+      display: none;
+   }
+   /* 오른쪽 lnb 메뉴 숨김 */
+   .mobile_tab{
+      display: block;
+   }
+   .nav{
+      display: none;
+   }
+   .hero{
+      margin-top: 0;
+   }
+}
+
+@media screen and (max-width:350px) {
+   .header .social{
+      display: none;
+   }
+   .header .signature{
+      left: 0;
+      top: 0;
+      margin-left: 12px;
+   }
+}
+
+/* 전체영역이 움직이는 컨테이너 */
+.container{
+   position: relative;
+   left: 0;
+   transition: left 0.4s ease-out;
+}
+.container.active{
+   left: -220px;
 }
 
