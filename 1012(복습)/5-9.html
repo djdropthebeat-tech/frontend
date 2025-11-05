@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+// 5. 배열 [3,7,2,9,4]의 최대값과 최소값을 구하세요.
+    let num = [3,7,2,9,4];
+    let max = num[0];
+    let min = num[0];
+        for(let i =1; i<num.length; i++){
+            if(num[i]>max){
+                max = num[i];
+            }
+        }
+        document.write('최댓값:'+ max+'<br>');
+
+
+        for(let i=1; i<num.length; i++){
+            if(num[i]<min){
+                min = num[i];
+            }
+        }
+        document.write('최솟값:'+min+'<br>');
+
+
+// 6. 문자열 "javascript"를 뒤집어서 출력하세요.
+
+
+// 7. 배열 [1,2,3,4,5]의 평균을 구하세요.
+    let num2 =[1,2,3,4,5];
+    let sum = 0;
+        for(let i=1; i<=num.length; i++){
+            sum +=i;
+        }
+        document.write('평균:'+sum/num2.length+'<br>');
+
+
+// 8. 문자열 "apple,banana,orange"를 배열로 바꾸고, 'banana'를 제거한 배열을 출력하세요.
+    let fruits = ['apple','banana','orange'];
+    let remove = fruits.splice(1,1);
+        document.write(fruits+'<br>');
+        
+        console.log('남은 과일들:', fruits);   
+        console.log('삭제된 과일:', remove);   
+
+
+// 9. 문자열 "Hello World"에서 'l'의 개수를 세세요.
+    const str = 'Hello World';
+    const count = str.split('l').length-1;
+    document.write(count);
+ 
+        
+</script>
