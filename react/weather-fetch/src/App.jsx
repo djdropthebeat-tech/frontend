@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+// import axios from 'axios';
 import './App.css'
 
 const API_KEY ='f3c660d9eee7e8bec4e58f869b8f3347'
@@ -10,22 +10,30 @@ export default function App() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState("");
 
-  const axiosWeather = async (cityName) => {
+  const fetchWeather = async (cityName) => {
     if(!cityName.trim()){
       setError('도시 이름을 입력해주세요.');
       return;
     }
     // 도시이름 앞뒤에 공백제거후 아무 것도 입력 되지 않으면, 도시이름을 입력하라는 메세지
-    setLoading(true)
-    setError('')
-    
+    setLoading(true);
+    setError('');
+
     try{
-      const repsponse = await axios.get(
+      const response = await fetch(
       // http://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=f3c660d9eee7e8bec4e58f869b8f3347&units=metric&lang=kr
         `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric&lang=kr`
       );
-      setWeather(repsponse.data);
-      setError('');
+
+      // http오류체크 추가
+      if(!response.ok){
+        throw new Error(`http error ! status:${response.status}`);
+      }
+
+      // Json 파싱
+      const data = await response.json()
+      setWeather(data);
+      setError("");
     }catch(err){
       console.error('날씨 Api 오류 :', err);
       setError('날씨정보를 가져올 수 없습니다. 도시 이름 확인요망')
@@ -37,11 +45,11 @@ export default function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axiosWeather(city)
+    fetchWeather(city)
 }
 // 초기로드 시 서울 날씨 가져오기
 useEffect(() => {
-  axiosWeather('seoul');
+  fetchWeather('seoul');
 }, [])
 
   return (
