@@ -1,92 +1,355 @@
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react'
 
-function App() {
-  const { 
-    register,           // 입력 필드 등록
-    handleSubmit,       // 제출 핸들러
-    formState: { errors, touchedFields },  // 에러와 touched 상태
-    watch               // 값 감시
-  } = useForm({
-    mode: 'onBlur'      // blur 시 검증
+export default function App() {
+  const [formData, setFormData] =useState({
+    email:'',
+    password:'',
+    comfirmPassword:'',
+    name:'',
+    phone:''
+  });
+  
+  const [touched, setTouched] =useState({
+    email:false,
+    password:false,
+    comfirmPassword:false,
+    name:false,
+    phonr:false
   });
 
-  const password = watch('password');  // 비밀번호 확인용
+  const [showPassword, setShowPassword] =useState(false);
 
-  const onSubmit = (data) => {
-    alert(`회원가입 성공!\n\n이름: ${data.name}\n이메일: ${data.email}`);
-    console.log(data);
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    const passwordRegx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    return passwordRegx.test(password);
+  }
+
+  const validateName = (name) => {
+    return name.trim().length >=2;
+  }
+
+  const validatePhone = (phone) => {
+    const phoneRegx = /^\d{3}-\d{3,4}-\d{4}$/;
+    return phoneRegx.test(phone); 
+  }
+
+
+  // 에러메세지 생성
+  const getErrors = () => {
+    const errors = {}
+    // 빈 객체 배열 생성 -> 에러 발생 기 {}에 저장
+    if(touched.email && !validateEmail(formData.email)){
+      errors.email = "올바른 이메일 형식이 아닙니다.";
+    }
+    if(touched.password && !validatePassword(formData.password)){
+      errors.password = "비밀번호는 8자 이상, 영문+숫자를 포함해야 합니다.";
+    }
+    if (
+      touched.confirmPassword && formData.password !== formData.confirmPassword){
+      errors.confirmPassword = "비밀번호가 일치하지 않습니다";
+    }
+    if(touched.name && !validateName(formData.name)){
+      errors.name = "이름은 2자 이상이어야 합니다.";
+    }
+
+    if(touched.phone && !validatePhone(formData.phone)){
+      errors.phone = "올바른 전화번호 형식이 아닙니다.";
+    }
+    return errors;
+  };
+  const errors = getErrors();
+
+  // 폼 유효성 검사(모든 필드가 유효한지)
+  // 제출버튼 활성화 조건
+  const isFormValid = () =>{
+    return(
+      validateEmail(formData.email) &&
+      validatePassword(formData.password) &&
+      formData.password === formData.confirmPassword &&
+      validateName(formData.name) &&
+      validatePhone(formData.phone)
+    );
+  };
+
+  // 입력 변경 핸들러(입력창 여러 개 실시간 입력반영)
+  const handleChange = (e) =>{
+    const {name, value} = e.target;
+    // e.target 이벤트가 발생한 HTML 요소
+    // name 속성과 value 속성을 구조 분해 할당 
+    setFormData({
+      ...formData, //기존의 값을 유지하면서 새로운 데이터 반영
+      [name]:value,
+
+    });
+  };
+
+  // 블러 핸들러 (필드에서 포커스가 벗어날 때)
+  // 사용자가 이메일 필드에 입력을하고 떠남 -> touched.email =true 검사
+  const handleBlur = (e) => {
+    const { name } = e.target;
+    setTouched({
+      ...touched,
+      [name]: true
+    });
+  };
+  
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+
+    if(isFormValid()){
+      alert(`회원가입 성공!!\n\n이름:${formData.name}\n이메일:${formData.email}`)
+      console.log('회원가입데이터' ,formData);
+
+      // 폼 초기화
+      setFormData({
+        email: '',
+        password: '',
+        confirmPassword: '',
+        name: '',
+        phone:''
+      });
+      setTouched({
+        email: false,
+        password: false,
+        confirmPassword: false,
+        name: false,
+        phone:false
+      });
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      {/* 이메일 */}
-      <div>
-        <label>이메일 *</label>
-        <input
-          {...register('email', {
-            required: '이메일을 입력하세요',
-            pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              message: '올바른 이메일 형식이 아닙니다'
-            }
-          })}
-          placeholder="example@email.com"
-        />
-        {errors.email && <p>❌ {errors.email.message}</p>}
-        {touchedFields.email && !errors.email && (
-          <p>✅ 올바른 이메일 형식입니다</p>
-        )}
-      </div>
+    <div style={styles.container}>
+      <div style={styles.formCard}>
+        <h1 style={styles.title}>회원가입</h1>
+        <form action="" style={styles.form} onSubmit={handleSubmit}>
+          {/* 이메일 */}
+          <div style={styles.formGroup}>
+            <label htmlFor="email" style={styles.label}>이메일 *</label>
+            <input 
+              type="email" 
+              name='email' 
+              value={formData.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              style={{
+                ...styles.input,
+                borderColor:errors.email ? "#dc3545" : "#ddd",
+              }} 
+              placeholder='user@example.com'
+            />
+            {errors.email && (
+              <p style={styles.errorText}>❌ {errors.email}</p>
+            )}
+            {touched.email && !errors.email && formData.email &&(
+              <p style={styles.successText}>✅ 올바른 이메일 형식입니다</p>
+            )}
+          </div>
 
-      {/* 비밀번호 */}
-      <div>
-        <label>비밀번호 *</label>
-        <input
-          type="password"
-          {...register('password', {
-            required: '비밀번호를 입력하세요',
-            pattern: {
-              value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
-              message: '비밀번호는 8자 이상, 영문+숫자를 포함해야 합니다'
-            }
-          })}
-          placeholder="8자 이상, 영문+숫자"
-        />
-        {errors.password && <p>❌ {errors.password.message}</p>}
-      </div>
+          {/* 비밀번호 */}
+          <div style={styles.formGroup}>
+            <label style={styles.label}>비밀번호 *</label>
+            <div style={styles.passwordContainer}>
+              <input
+                type={showPassword ? 'text' : 'password'}
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                style={{
+                  ...styles.input,
+                  borderColor: errors.password ? '#dc3545' : '#ddd'
+                }}
+                placeholder="8자 이상, 영문+숫자"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                style={styles.toggleButton}
+              >
+                {showPassword ? '🙈' : '👁️'}
+              </button>
+            </div>
+            {errors.password && (
+              <p style={styles.errorText}>❌ {errors.password}</p>
+            )}
+            {touched.password && !errors.password && formData.password && (
+              <p style={styles.successText}>✅ 안전한 비밀번호입니다</p>
+            )}
+          </div>
 
-      {/* 비밀번호 확인 */}
-      <div>
-        <label>비밀번호 확인 *</label>
-        <input
-          type="password"
-          {...register('confirmPassword', {
-            required: '비밀번호 확인을 입력하세요',
-            validate: (value) => 
-              value === password || '비밀번호가 일치하지 않습니다'
-          })}
-          placeholder="비밀번호 재입력"
-        />
-        {errors.confirmPassword && <p>❌ {errors.confirmPassword.message}</p>}
-      </div>
+          {/* 비밀번호 확인 */}
+          <div style={styles.formGroup}>
+            <label style={styles.label}>비밀번호 확인 *</label>
+            <input 
+              type="password"
+              name='confirmPassword' 
+              placeholder='비밀번호 재입력'
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              style={{
+                ...styles.input,
+                borderColor: errors.password ? '#dc3545' : '#ddd'
+                }}
+            />
+            {errors.confirmPassword && (
+              <p style={styles.errorText}>❌ {errors.confirmPassword}</p>
+            )}
+            {touched.confirmPassword && !errors.confirmPassword && formData.confirmPassword && (
+              <p style={styles.successText}>✅ 비밀번호가 일치합니다.</p>
+            )}
+          </div>
 
-      {/* 이름 */}
-      <div>
-        <label>이름 *</label>
-        <input
-          {...register('name', {
-            required: '이름을 입력하세요',
-            minLength: {
-              value: 2,
-              message: '이름은 2자 이상이어야 합니다'
-            }
-          })}
-          placeholder="홍길동"
-        />
-        {errors.name && <p>❌ {errors.name.message}</p>}
-      </div>
+          {/* 이름 */}
+          <div style={styles.formGroup}>
+            <label style={styles.label}>이름 *</label>
+            <input 
+              type="text" 
+              name='name'
+              placeholder='홍길동'
+              value={formData.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              style={{
+                ...styles.input,
+                borderColor: errors.name ? '#dc3545' : '#ddd'
+              }}
+            />
+            {errors.name && (
+              <p style={styles.errorText}>❌ {errors.name}</p>
+            )}
+            {touched.name && !errors.name && formData.name && (
+              <p style={styles.successText}>✅ 유효한 이름입니다</p>
+            )}
+          </div>
+          
+          {/* 전화번호 */}
+          <div style={styles.formGroup}>
+            <label htmlFor="phone" style={styles.label}>전화번호 *</label>
+            <input 
+              type="tel" 
+              name='phone' 
+              value={formData.phone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              style={{
+                ...styles.input,
+                borderColor:errors.email ? "#dc3545" : "#ddd",
+              }} 
+              placeholder='010-1234-5678'
+            />
+            {errors.phone && (
+              <p style={styles.errorText}>❌ {errors.phone}</p>
+            )}
+            {touched.phone && !errors.phone && formData.phone &&(
+              <p style={styles.successText}>✅ 올바른 전화번호 형식입니다</p>
+            )}
+          </div>
 
-      <button type="submit">가입하기</button>
-    </form>
-  );
+          {/* 제출버튼 */}
+          <button 
+            type='submit'
+            disabled={!isFormValid()}
+            style={{
+              ...styles.submitButton,
+              backgroundColor: isFormValid() ? '#28a745' : '#ccc',
+              cursor: isFormValid() ? 'pointer' : 'not-allowed'
+            }}
+          >
+            가입하기</button>
+        </form>
+      </div>
+    </div>
+  )
 }
+
+const styles = {
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '100vh',
+    backgroundColor: '#f0f2f5',
+    padding: '2rem',
+    fontFamily: 'Arial, sans-serif',
+  },
+  formCard: {
+    backgroundColor: 'white',
+    borderRadius: '10px',
+    padding: '2.5rem',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+    width: '100%',
+    maxWidth: '500px',
+  },
+  title: {
+    textAlign: 'center',
+    color: '#333',
+    marginBottom: '2rem',
+    fontSize: '2rem',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1.5rem',
+  },
+  formGroup: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  label: {
+    marginBottom: '0.5rem',
+    color: '#333',
+    fontWeight: 'bold',
+    fontSize: '0.95rem',
+  },
+  input: {
+    padding: '12px',
+    fontSize: '1rem',
+    border: '2px solid #ddd',
+    borderRadius: '5px',
+    outline: 'none',
+    transition: 'border-color 0.3s',
+  },
+  passwordContainer: {
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  toggleButton: {
+    position: 'absolute',
+    right: '10px',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    fontSize: '1.2rem',
+  },
+  errorText: {
+    color: '#dc3545',
+    fontSize: '0.875rem',
+    marginTop: '0.5rem',
+    margin: '0.5rem 0 0 0',
+  },
+  successText: {
+    color: '#28a745',
+    fontSize: '0.875rem',
+    marginTop: '0.5rem',
+    margin: '0.5rem 0 0 0',
+  },
+  submitButton: {
+    padding: '14px',
+    fontSize: '1.1rem',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    marginTop: '1rem',
+    transition: 'background-color 0.3s',
+    fontWeight: 'bold',
+  }
+};
