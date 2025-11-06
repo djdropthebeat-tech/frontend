@@ -1,13 +1,10 @@
 import React from 'react'
 import './TodoItem.css'
 
-export default function TodoItem({id, content, isDone, createdDate, onUpdate, onDelete}) {
+export default function TodoItem({id, text, completed, createdDate, onUpdate, onDelete}) {
   const onChangeCheckBox = () => {
     onUpdate(id);
   }
-
-  // const element =document.querySelector('title_col');
-  //   element.classList.add('checked');
 
   const onClickDelete = () => {
     onDelete(id);
@@ -16,15 +13,14 @@ export default function TodoItem({id, content, isDone, createdDate, onUpdate, on
 
 
   return (
-    <div  className='TodoItem'>
+    <div className='TodoItem'>
         <div className="checkbox_col">
-            <input type="checkbox" checked={isDone}
+            <input type="checkbox" checked={completed}
             onChange={onChangeCheckBox}
-
             />
         </div>
-        <div className="title_col" >
-          {content}
+        <div className={`title_col ${completed ? "checked" : ""}`}>
+          {text}
         </div>
         <div className="date_col">
             {new Date(createdDate).toLocaleDateString()}

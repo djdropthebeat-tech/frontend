@@ -8,38 +8,38 @@ import TodoList from './component/TodoList'
 const mockTodo = [
   {
     id:0,
-    isDone:false,
-    content:'react 공부하기',
+    completed:false,
+    text:'react 공부하기',
     createdDate: new Date().getTime(), 
   },
   {
     id: 1,
-    isDone: false,
-    content: "빨래 널기",
+    completed: false,
+    text: "빨래 널기",
     createdDate: new Date().getTime(),
   },
   {
     id: 2,
-    isDone: false,
-    content: "노래 연습하기",
+    completed: false,
+    text: "노래 연습하기",
     createdDate: new Date().getTime(),
   },
   {
     id: 3,
-    isDone: false,
-    content: "청소하기",
+    completed: false,
+    text: "청소하기",
     createdDate: new Date().getTime(),
   },
   {
     id: 4,
-    isDone: false,
-    content: "영화 예매하기",
+    completed: false,
+    text: "영화 예매하기",
     createdDate: new Date().getTime(),
   },
   {
     id: 5,
-    isDone: false,
-    content: "디저트 구매하기",
+    completed: false,
+    text: "디저트 구매하기",
     createdDate: new Date().getTime(),
   },
 ]
@@ -51,7 +51,7 @@ function reducer(state,action){
       return [action.newItem,...state];
     case "UPDATE":
       return state.map((it) =>
-        it.id === action.targetId ? {...it, isDone : !it.isDone} :it
+        it.id === action.targetId ? {...it, completed : !it.completed} :it
       )
     case "DELETE":
       return state.filter((it)=>it.id !== action.targetId);
@@ -67,13 +67,13 @@ export default function App() {
 
   const idRef = useRef(6);
   
-  const onCreate = (content) => {
+  const onCreate = (text) => {
     dispatch({
       type:"CREATE",
       newItem:{
         id:idRef.current,
-        content,
-        isDone:false,
+        text,
+        completed:false,
         createdDate: new Date().getTime(),
       },
     });

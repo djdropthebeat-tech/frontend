@@ -1,0 +1,25 @@
+.TodoEditor .editor_wrapper{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.TodoEditor input{
+    /* .(원래 flex:1을 각각 주면 같은 비율로 크기 설정되지만.) */
+    flex:1;  /* 같은 div에 있는 button 80px를 제외한 최대 크기로 설정됨*/
+    box-sizing: border-box;
+    border: 1px solid rgb(220,220,220);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+
+.TodoEditor button{
+    cursor: pointer;
+    width: 80px;
+    /* flex: 1; */
+    border: none;
+    background-color: #1f93ff;
+    color: #fff;
+    border-radius: 5px;
+}
