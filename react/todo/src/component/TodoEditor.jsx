@@ -21,6 +21,7 @@ export default function TodoEditor({onCreate}) {
     if(!content){
       inputRef.current.focus();
       return;
+      // 내용이 없으면 다시 input창 클릭
     }
     onCreate(content);
     setContent("");
