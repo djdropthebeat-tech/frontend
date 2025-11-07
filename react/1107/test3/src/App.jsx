@@ -108,8 +108,8 @@ const fetchUsers = async () => {
 const styles ={
   container:{
     width:'100%',
-    height:'100%',
-    padding:'30px',
+    minHeight: '100vh',
+    padding:'50px 60px',
     backgroundColor:'#f4f4f4',
     boxSizing:'border-box',
     
