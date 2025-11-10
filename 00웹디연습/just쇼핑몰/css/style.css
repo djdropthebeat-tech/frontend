@@ -1,13 +1,13 @@
 *{margin: 0; padding: 0;}
 ul, li{list-style: none; }
-a{color: #000; text-decoration: none;}
+a{color: #222328; text-decoration: none;}
 
 .container{
     width: 1200px;
     margin: 0 auto;
 }
 header{
-    background-color: green;
+    background-color: burlywood;
     height: 100px;
     display: flex;
     flex-direction: row;
@@ -61,17 +61,103 @@ header .logo{
     width: 100%;
     height: auto;
 }
-
-
+/* contents---------------------------- */
 .contents{
-    background-color: pink;
-    width: 100%;
+    /* background-color: pink; */
+    width: 1200px;
     height: 200px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
 }
 .c-wrap{
     width: 400px;
+    height: 100%;
     display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 1px solid #000;
 }
-.c-wrap ul{
-    padding: 10px;
+.c-wrap .tab-menu ul{
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    /* line-height: 40px; */
+}
+.c-wrap .tab-menu ul li{
+    width: 200px;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.c1 ul{
+    width: 100%;
+    padding: 10px 2px;
+    box-sizing: border-box;
+}
+.c1 ul li{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.c3{
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 400px;
+}
+.c4{
+    width: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.contents img{
+    width: 100%;
+    height: auto;
+}
+/* footer---------------------------- */
+footer{
+    background-color: burlywood;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+footer .logo{
+    width: 200px;
+    /* height: 100%; */
+}
+footer .logo img{
+    width: 100%;
+    height: auto;
+}
+
+footer .copyright{
+    padding: 30px;
+    font-size: 14px;
+}
+footer .sns{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+footer .sns .icon{
+    width: 50px;
+    height: 50px;
+    
+}
+footer .sns .icon img{
+    width: 100%;
 }
