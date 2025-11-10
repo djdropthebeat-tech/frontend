@@ -84,25 +84,78 @@ header .logo{
     display: flex;
     flex-direction: row;
     /* line-height: 40px; */
+    cursor: pointer;
 }
 .c-wrap .tab-menu ul li{
     width: 200px;
     padding: 5px;
+    display: inline-block;
     box-sizing: border-box;
     text-align: center;
+    border: 1px solid #000;
 }
+
 .c1 ul{
     width: 100%;
     padding: 10px 2px;
     box-sizing: border-box;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
 }
+
 .c1 ul li{
     width: 400px;
     display: flex;
     justify-content: space-between;
-    padding: 2px;
+    padding: 8px 10px;
     box-sizing: border-box;
+    visibility: visible;
 }
+.c2 ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 40px;
+}
+
+.c2 li{
+    width: 30%;
+}
+.c2 li img{
+    width: 100%;
+}
+
+.c1.active ul,
+.c2.active ul {
+    visibility: visible;
+    opacity: 1;
+}
+/* ===== 탭 동작을 위한 최소 규칙 (추가/대체) ===== */
+.c1, .c2 {
+    position: absolute;
+    top: 40px;      /* 탭 메뉴 바로 아래에 위치시키려면 40px 사용 (필요시 조절) */
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* 활성화된 탭만 보이게 함 (다른 속성 건드리지 않음) */
+.c1.active, .c2.active {
+    visibility: visible;
+    opacity: 1;
+    position: relative; /* 보일 때는 문서 흐름에 맞게 위치하게 함 */
+}
+
 
 .c3{
     width: 400px;
