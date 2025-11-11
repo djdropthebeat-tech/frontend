@@ -1,4 +1,4 @@
-*{margin: 0; padding: 0;}
+*{margin: 0; padding: 0; box-sizing: border-box;}
 ul, li{list-style: none; }
 a{color: #222328; text-decoration: none;}
 
@@ -94,43 +94,8 @@ header .logo{
     text-align: center;
     border: 1px solid #000;
 }
-
-/* .c1 ul{
-    width: 100%;
-    padding: 10px 2px;
-    box-sizing: border-box;
-    display: block;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    position: absolute;
-} */
-
-
-.c2 ul{
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    box-sizing: border-box;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    position: absolute;
-}
-
-.c2 li{
-    width: 30%;
-}
-.c2 li img{
-    width: 100%;
-}
-
-.c1.active ul,
-.c2.active ul {
-    visibility: visible;
-    opacity: 1;
+.c-wrap .tab-menu ul li.active{
+    border-bottom: none;
 }
 
 .c1, .c2 {
@@ -141,25 +106,34 @@ header .logo{
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
 .c1.active, .c2.active {
     visibility: visible;
     opacity: 1;
     position: relative; 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
-.c1.active > ul > li{
+.c1 ul{
+    height: 165px;
+}
+.c1 ul li{
     width: 400px;
     display: flex;
     justify-content: space-between;
-    padding: 8px 10px;
-    box-sizing: border-box;
-    visibility: visible;
+    padding: 0px 7px;
+    line-height: 41px;
 }
 
+.c2 ul{
+    width: 400px;
+    height: 165px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.c2 ul li img{
+    width: 100%;
+
+}
 
 .c3{
     width: 400px;
