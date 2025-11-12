@@ -67,7 +67,7 @@ export default function Home() {
             </div>
         </section>
         <section className="cta-banner">
-            <div className="containter cta-inner">
+            <div className="container cta-inner">
                 <div>
                     <h2>써브웨이를 제대로 즐기는 가장 쉬운 방법</h2>
                     <p>온라인 주문으로 빠르게 픽업하고 썹 포인트도 챙기세요.</p>
