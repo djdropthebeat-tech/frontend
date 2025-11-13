@@ -241,9 +241,9 @@ footer{
 .pop{
     width: 700px;
     height: auto;
-    padding: 50px 60px;
+    padding: 50px 35px;
     background-color: #fff;
-    border-radius: 50px;
+    border-radius: 20px;
     border: 1px solid #ccc;
     position: absolute;
     top: 50%;

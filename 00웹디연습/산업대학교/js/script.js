@@ -19,12 +19,21 @@ $(function(){
 	});
 
 	
-	$(".t1").click(function(){
-		$(".pop").fadeIn();
-	});
-	$("button").click(function(){
-		$(".pop").fadeOut();
-	});
+	$(function() {
+  // 처음엔 팝업 숨기기
+  $(".pop").hide();
+
+  // .c1 안의 .txt 클릭 시 팝업 열기
+  $("a").click(function() {
+    $(".pop").fadeIn();
+  });
+
+  // 닫기 버튼 클릭 시 팝업 닫기
+  $("button").click(function() {
+    $(".pop").fadeOut();
+  });
+});
+
 
 
 
