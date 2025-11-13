@@ -90,16 +90,26 @@ header{
     height: 300px;
     background-color: yellow;
     position: relative;
+    overflow: hidden;
+}
+.slider{
+    width: 300%;
+    display: flex;
+
 }
 .slide{
     width: 100%;
     height: 300px;
     position: absolute;
-    overflow: hidden;
+    top: 0;
+    left: 100%;
+}
+.slide:first-child {
+  left: 0; 
 }
 .slide .txt{
     position: absolute;
-    z-index: 100;
+    width: 300px;
     padding: 20px;
     top: 50%;
     left: 50%;
@@ -107,10 +117,12 @@ header{
     font-size: 21px;
     background-color: rgba(255,255,255,0.3);
     border: 2px solid #333;
+    z-index: 100;
 }
 .slide img{
     width: 100%;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
 }
 
 .contents{
@@ -224,4 +236,27 @@ footer{
 .footer-right{
     width: 200px;
     font-size: 12.5px;
+}
+
+.pop{
+    width: 700px;
+    height: auto;
+    padding: 50px 60px;
+    background-color: #fff;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+.pop p{
+    padding: 20px 0;
+}
+.pop button{
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 10px;
+    
 }

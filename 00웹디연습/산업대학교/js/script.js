@@ -6,21 +6,18 @@ $(function(){
 		$(".menu>li>ul, .menu-bg").stop().slideUp();
 	});
 
-	var i = 0;
-	
-	setInterval(function(){
-		i++;
-		if(i==3){
-			i=0;
-		}
-		$(".slide").eq(i).css("left","100%").stop().animate({
-			"left":"0"
-		});
-		$(".slide").eq(i-1).css("left","0%").stop().animate({
-			"left":"-100%"
-		});
-		
-	},3000);
+	$(function(){
+		let i = 0;
+		setInterval(function(){
+			let next = (i + 1) % $(".slide").length;
+
+			$(".slide").eq(i).animate({left: "-100%"}, 800);
+			$(".slide").eq(next).css({left: "100%"}).animate({left: "0"}, 800);
+
+			i = next; 
+		}, 3000);
+	});
+
 	
 	$(".t1").click(function(){
 		$(".pop").fadeIn();
