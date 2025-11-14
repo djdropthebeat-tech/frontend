@@ -24,7 +24,7 @@ $(function(){
   $(".pop").hide();
 
   // .c1 안의 .txt 클릭 시 팝업 열기
-  $("a").click(function() {
+  $(".popup").click(function() {
     $(".pop").fadeIn();
   });
 
