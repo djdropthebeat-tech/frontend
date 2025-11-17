@@ -1,11 +1,34 @@
-$(function(){
-    $('.main1').mouseenter(function(){
-        $('.sub1').stop().slideDown();
+$(function () {
+
+    // 처음에는 모든 sub 숨김
+    $('.sub').hide();
+    $('.sub-wrap').hide();
+
+    $('.main-menu').mouseenter(function () {
+        const target = $(this).data('target');
+
+        if (!target) {
+            // SHOP, ARCHIVE 아닌 메뉴에 올라가면 서브 닫기
+            $('.sub-wrap').stop().slideUp();
+            return;
+        }
+
+        // 서브랩이 닫혀있으면 슬라이드 다운(애니메이션 1번만 발생)
+        if (!$('.sub-wrap').is(':visible')) {
+            $('.sub-wrap').stop().slideDown();
+        }
+
+        // 모든 sub 숨기고 필요한 sub만 표시
+        $('.sub').hide();
+        $('.' + target).show();
     });
-    $('.gnb').mouseleave(function(){
-        $('.sub1').stop().slideUp();
+
+    // 메뉴 영역 벗어나면 서브 전체 닫기
+    $('header').mouseleave(function () {
+        $('.sub-wrap').stop().slideUp();
     });
 });
+
 $(function(){
     $('.main2').mouseenter(function(){
         $('.sub2').stop().slideDown();
