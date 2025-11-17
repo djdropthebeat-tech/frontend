@@ -1,7 +1,7 @@
 const CTA_ITEMS = [
   {
     title: 'Contact',
-    subtitle: '최고의 켐페인을 위한 첫 단추',
+    subtitle: '최고의 캠페인을 위한 첫 단추',
     link: '광고문의 바로가기 →',
     className: 'lr1',
   },
