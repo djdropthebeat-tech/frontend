@@ -28,7 +28,7 @@ export default function App() {
   // 현재 활성화된 섹션 인덱스(0~5)
 
   const wheelLock = useRef(false);
-  // const touchStartY = useRef(null);
+  const touchStartY = useRef(null);
   
   const changeSection = useCallback((next)=>{
     if(showIntro||isMenuOpen){
@@ -63,12 +63,41 @@ export default function App() {
           wheelLock.current = false;
         }, 1000);
   });
+  
+  const handleTouchStart = useCallback((event)=>{
+    if(isMenuOpen || showIntro) return; // 메뉴가 열려 있을 때나 인트로 중에는 무시
+    touchStartY.current = event.touches[0].clientY;
+    // 현재는 첫번째 터치만 처리
+  },[isMenuOpen, showIntro]);
+
+  const handleTouchMove = useCallback((event)=>{
+    if(touchStartY.current===null || wheelLock.current || isMenuOpen || showIntro) return; 
+    // 시작위치가 없거나, 잠금, 메뉴 보이거나, 인트로 상태에서는 빠져나감
+
+    const currentY = event.touches[0].clientY;
+    const delta = touchStartY.current - currentY;
+    if(Math.abs(delta) < 50){
+      return;
+    }
+    wheelLock.current = true;
+    changeSection((prev) => (delta >0 ? prev +1 : prev -1));
+    window.setTimeout(() => {
+      wheelLock.current = false;
+    }, 1000);
+    touchStartY.current = null;
+  },[isMenuOpen, showIntro, changeSection])
+
+  const handleTouchEnd = useCallback(() => {
+    touchStartY.current = null;
+  }, []);
+
   const fullCoverStyle = useMemo(() => ({
     transform: `translateY(-${activeSection * 100}vh)`,
     transition: 'transform 1s ease',
   }), [activeSection]);
   
   const sections = useMemo(()=>SECTION_CONFIG,[]);
+
 
   return (
     <div className={`app-root ${isMenuOpen ? 'menu-open' : ''}`}>
@@ -90,8 +119,11 @@ export default function App() {
         activeIndex={activeSection}
         onSelect={(index)=>changeSection(()=> index)}
       />
-      <div id="fullpage"
+      <div id="fullpage" 
         onWheel={handleWheel}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <div className="full_cover" style={fullCoverStyle}>
           <SectionOne/> 
