@@ -25,6 +25,7 @@ const slides = [
 ];
 
 return (    //전개연산자
+  
     <Slider {...settings}> 
       {slides.map((slide)=>(
         <div key={slide.id} className="slide">

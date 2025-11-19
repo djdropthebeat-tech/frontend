@@ -8,8 +8,8 @@ export default function App() {
       <h1>Slick Slider 종류별예제</h1>
       <section className='slider-section'>
         <h2>1. 기본 슬라이더(Basic Slider)</h2>
-      </section>
       <BasicSlider/>
+      </section>
     </div>
     
   )
