@@ -537,9 +537,10 @@ section {
   margin-left: 45px;
   width: 270px;
   height: 100%;
-  background: url(/img/subway_logo_bn_20200602031229667.png) no-repeat center;
+  /* background: url(/img/subway_logo_bn_20200602031229667.png) no-repeat center; */
   position: relative;
   border-radius: 0 30px 0 30px;
+  overflow: hidden;
 }
 .cont_04:after {
   content: "";
@@ -557,6 +558,21 @@ section {
   right: 20px;
   top: 20px;
 }
+.slider{
+    width: 400%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    background-color: blue;
+    display: flex;
+}
+.slide{
+  width: 100%;
+}
+.slide img{
+  width: 100%;
+}
+
 /* >>>>>>>>>>>>>> section04 ==================== */
 #section04 ul {
   width: 1200px;
