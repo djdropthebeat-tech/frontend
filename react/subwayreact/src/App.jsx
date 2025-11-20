@@ -1,9 +1,10 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, {useRef, useState} from 'react'
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './styles/Subway.css';
+import ImageSlider from './component/ImageSlider';
 
 const navMenus = [
   {
@@ -215,23 +216,6 @@ const sliderSetting = {
 }
 // 슬라이드 하단 (dot) 내비게이션
  
-const [index, setIndex] = useState(0);
-  const total = 4; // 이미지 개수
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex(prev => {
-        if (prev === total - 1) return 0;
-        return prev + 1;
-      });
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-
-
-
 return (
     <div>
       <header>
@@ -398,18 +382,9 @@ return (
               </ul>
             </div>
             <div className="cont_04">
-              <div
-                className="slider"
-                style={{left: `-${index * 100}%`,}}
-              >
-                <div className="slide"><img src="/img/s1.png" alt="" /></div>
-                <div className="slide"><img src="/img/s2.png" alt="" /></div>
-                <div className="slide"><img src="/img/s3.png" alt="" /></div>
-                <div className="slide"><img src="/img/s4.jpg" alt="" /></div>
-              </div>
+              <ImageSlider/>
             </div>
-            
-          </div>
+        </div>
         </div>
       </section>
       <section id="section04">
