@@ -1,6 +1,6 @@
 * {margin: 0;padding: 0; box-sizing: border-box; overflow-x: hidden;}
 ul {list-style: none;}
-a {text-decoration: none;color: #000;}
+a {text-decoration: none; color: #000;}
 
 .wrap {
   width: 100vw;
@@ -17,7 +17,7 @@ a {text-decoration: none;color: #000;}
 
 .track {
   width: 100%;
-  height: 120px;
+  height: 80%;
   background: url("../images/logo_b.png") repeat-x;
   background-size: auto 100%;
   animation: slide 10s linear infinite;
@@ -35,19 +35,21 @@ a {text-decoration: none;color: #000;}
 header{
   width: 100%;
   height: 45px;
+  line-height: 45px;
   /* border-bottom: 1px solid #000; */
   display: flex;
   justify-content: space-between;
 }
 .gnb{
+  width: 80vw;
   display: flex;
-  gap: 12px;
-  padding-left: 15px;
+  gap: 27px;
+  padding-left: 35px;
+  /* background-color: pink; */
 }
 .main-menu{
   display: inline-block;
-  padding: 0 20px;
-  line-height: 45px;
+  /* padding: 0 20px; */
   text-align: center;
   font-size: 14px;
   overflow-y: hidden;
@@ -56,14 +58,14 @@ header{
   font-weight: 700;
 }
 .sub-wrap{
-  display:none;
+  /* display:none; */
   width: 100%;
   height: 25px;
   position: absolute;
   top: 195px;
   left: 0;
   line-height: 25px;
-  padding-left: 20px;
+  padding-left: 35px;
   background-color: #fff;
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
@@ -71,7 +73,7 @@ header{
 .sub-wrap .sub{
   display: flex;
   flex-direction: row;
-  padding: 0 7px;
+  gap: 20px;
   position: absolute;
   font-size: 11px;
   font-weight: 400;
@@ -80,7 +82,7 @@ header{
 .sub li{
   display: inline-block;
   flex-direction: row;
-  padding: 0 14px;
+  /* padding: 0 14px; */
 }
 .sub li:hover{
   font-weight: 600;
@@ -88,12 +90,25 @@ header{
 
 .quick-menu{
   display: flex;
-  width: 20%;
+  width: 20vw;
   height: 100%;
-  gap: 17px;
+  /* padding: 12px 0; */
+  padding-right: 35px;
+  justify-content: flex-end;
+  /* gap: 20px; */
+  /* background-color: greenyellow; */
+  overflow-y: hidden;
 }
-.fa-solid{
-  font-size: 30px;
+.quick-menu .icon{
+  display: inline-block;
+  overflow-y: hidden;
+  
+}
+.quick-menu .icon img{
+  width: 100%;
+  height: 100%;
+  padding: 12px 8px;
+  
 }
 
 .slider{
@@ -123,7 +138,7 @@ header{
   width: 100%;
   height: 30px;
   line-height: 30px;
-  padding-left: 34px;
+  padding-left: 35px;
   border-bottom: 1px solid #000;
   /* text-align: center; */
   font-weight: 500;
@@ -176,13 +191,81 @@ header{
 footer{
   width: 100%;
   height: 200px;
-  background-color: #111;
+  padding: 17px 30px;
   display: flex;
-  padding-left: 10px;
-  align-items: center;
-}
-.f_bottom{
-  font-size: 12px;
+  justify-content: space-between;
+  font-size: 11px;
   font-weight: 300;
-  color: #fff;
+  background-color: #111;
+  color: #f4f4f4;
+  overflow-y: hidden;
 }
+.f-left{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.f-left .info ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.f-right{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.f-right a{
+  color: #f4f4f4;
+}
+
+
+@media screen and (max-width:1024px){
+  footer{
+    height: 150px;
+    padding: 12px 15px;
+  }
+  .logo-banner{
+    height: 100px;
+  }
+  header{
+    height: 35px;
+    line-height: 35px;
+  }
+  .quick-menu .icon img{
+    width: 100%;
+    height: 100%;
+    padding: 9px 6px;
+    
+  }
+  .f-left .info{
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  
+  .gnb {
+    gap: 15px;  
+  }
+  .main-menu {
+    font-size: 13px; 
+  }
+  /* 햄버거메뉴 */
+}
+
+
+/* @media screen and (max-width:600px){
+  .f-left p{
+    margin-right: 25px;
+    word-break: keep-all;
+  }
+}
+
+@media screen and (max-width:375px){
+  footer{
+    font-size: 8px;
+  }
+} */
