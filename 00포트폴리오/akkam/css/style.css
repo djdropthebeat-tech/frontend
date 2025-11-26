@@ -88,9 +88,43 @@ header{
   font-weight: 600;
 }
 
+/* 햄버거 버튼 (PC에서는 숨김) */
+.mobile-nav {
+  width: 30px;
+  height: 20px;
+  margin:12px 0 0 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow-y: hidden;
+  background-color: yellow;
+}
+
+.mobile-nav span {
+  display: block;
+  height: 1.5px;
+  background: #000;
+  transition: 0.3s;
+  transform-origin: center;
+  
+}
+
+
+.mobile-nav.active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+    transform-origin: center;
+    
+}
+.mobile-nav.active span:nth-child(2) {
+    transform: translateY(-11px) rotate(-45deg);
+    transform-origin: center;
+}
+
+
 .quick-menu{
   display: flex;
-  width: 20vw;
+  /* width: 20vw; */
   height: 100%;
   /* padding: 12px 0; */
   padding-right: 35px;
@@ -239,25 +273,75 @@ footer{
     width: 100%;
     height: 100%;
     padding: 9px 6px;
-    
+  }
+  .sub-wrap{
+    top: 135px;
   }
   .f-left .info{
     display: none;
   }
 }
 @media screen and (max-width: 768px) {
-  
+/*   
   .gnb {
     gap: 15px;  
-  }
+  } */
   .main-menu {
     font-size: 13px; 
   }
-  /* 햄버거메뉴 */
+  header {
+      position: relative;
+  }
+  .mobile-nav{
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
+  }
+  .gnb {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    z-index: 9999;
+    background-color: blue;
+  }
+  .gnb.active {
+    display: flex;
+  }
+
+  .sub-wrap {
+    display: none;
+    flex-direction: column;
+    background: #fafafa;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+  }
+  .sub-wrap.active {
+    display: block;
+  }
+  .quick-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    gap: 10px;
+    padding-right: 20px;
+  }
+  .line{
+    padding-left: 20px;
+  }
 }
 
 
-/* @media screen and (max-width:600px){
+
+@media screen and (max-width:600px){
   .f-left p{
     margin-right: 25px;
     word-break: keep-all;
@@ -268,4 +352,4 @@ footer{
   footer{
     font-size: 8px;
   }
-} */
+}

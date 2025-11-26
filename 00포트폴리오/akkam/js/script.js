@@ -62,3 +62,54 @@ $(function(){
     move(next);
   }, 5000); // 3초마다 슬라이드
 });
+
+
+$(function () {
+
+    /*** PC: Hover 메뉴 ***/
+    $('.main-menu').mouseenter(function () {
+        if (window.innerWidth <= 768) return; // 모바일에서는 작동 금지
+
+        const target = $(this).data('target');
+
+        if (!target) {
+            $('.sub-wrap').stop().slideUp();
+            return;
+        }
+
+        $('.sub').hide();
+        $('.sub-' + target).show();
+        $('.sub-wrap').stop().slideDown();
+    });
+
+    $('header').mouseleave(function () {
+        if (window.innerWidth <= 768) return;
+        $('.sub-wrap').stop().slideUp();
+    });
+
+
+    /*** 모바일: 햄버거 메뉴 ***/
+    $('.mobile-nav').on('click', function () {
+        $(this).toggleClass('active');
+        $('.gnb').toggleClass('active');
+        $('.sub-wrap').removeClass('active').hide(); // 모바일에서 메뉴 열릴 때 서브는 초기화
+    });
+
+
+    /*** 모바일: SHOP, ARCHIVE 클릭 시 서브메뉴 열기 ***/
+    $('.main-menu').on('click', function (e) {
+        if (window.innerWidth > 768) return; // PC에서는 클릭 동작 차단
+
+        e.preventDefault();
+
+        const target = $(this).data('target');
+        if (!target) return;
+
+        $('.sub').hide();
+        $('.sub-' + target).show();
+
+        $('.sub-wrap').toggleClass('active').toggle();
+    });
+
+});
+
