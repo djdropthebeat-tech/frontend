@@ -10,8 +10,8 @@
             var i = 0;
             setInterval(function(){
                 var next = (i+1)%3
-                $(".slide li").eq(next).css("left","100%").animate({left:"0"},600);
-                $(".slide li").eq(i).css("left",0).animate({left:"-100%"},600);
+                $(".slide li").eq(next).fadeOut();
+                $(".slide li").eq(i).fadeIn();
                 i=next;
             },3000);
         });
@@ -38,11 +38,11 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            left: 100%;
             overflow: hidden;
+            display: none;
         }
         .slide li:first-child{
-            left: 0;
+            display: block;
         }
         .slide li img{
             width: 100%;

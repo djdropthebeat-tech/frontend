@@ -5,7 +5,7 @@ a{text-decoration: none; color:#333333;}
 #wrap{
     width: 100%;
     height: 970px;
-    /* overflow: hidden; */
+    /* overflow-x: hidden; */
 }
 
 header{
@@ -51,7 +51,7 @@ nav{
     background-color: aqua;
 }
 
-.main-title ul{
+.sub{
     background-color: aqua;
     display: flex;
     flex-direction: row;
@@ -63,16 +63,16 @@ nav{
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s;
-    z-index: 100;
+    z-index: 999;
 }
-
-.main-title ul li{
+.sub a{
     width: 200px;
 }
-.main-title ul li a{
-    display: block;
+.sub a:hover{
+    background-color: #fff;
 }
-.main-title a:hover .main-title ul{
+.lnb:hover .sub{
+    /* width: 100%; */
     opacity: 1;
     visibility: visible;
 }
@@ -88,6 +88,7 @@ section{
     height: 400px;
     position: relative;
     /* float: left; */
+    /* overflow: hidden; */
     
 }
 .slide{
@@ -99,13 +100,20 @@ section{
     width: 100%;
     height: 100%;
     position: absolute;
+    left: 0;
+    display: none;
+    overflow: hidden;
+}
+.slide li:first-child{
+    display: block;
 }
 .slide li img{
     width: 100%;
     height: 100%;
+    display: block;
 }
 .slide li .txt{
-    /* width: 330px; */
+    width: 350px;
     height: auto;
     position: absolute;
     top: 50%;
@@ -117,9 +125,9 @@ section{
 }
 
 .quick{
-    width: 100px;
+    width: 60px;
     height: auto;
-    position: absolute;
+    position: fixed;
     top:0;
     right: 0;
 }
@@ -139,8 +147,8 @@ section{
 .b1 img{
     width: 100%;
     height: 100%;
-    /* object-fit: cover; */
-    object-position: center;
+    object-fit: cover;
+    object-position: bottom;
     position: relative;
 }
 .b1 p{
@@ -153,8 +161,127 @@ section{
     color: white;
     text-shadow: 0 0 50px #000;
 }
+
+.notice-gallery{
+    width: 100%;
+    height: 250px;
+}
+.notice-gallery .title{
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+    padding: 13px 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.notice-gallery .title1:hover, 
+.notice-gallery .title2:hover{
+    text-decoration: underline;
+}
+.notice-gallery .content{
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+.noti{
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    
+}
+.noti.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.noti li{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+.noti li .t1{
+    cursor: pointer;
+}
+
+.gall{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    gap: 10px;
+    /* overflow: hidden; */
+    opacity: 0;
+    visibility: hidden;
+}
+.gall.active{
+    opacity: 1;
+    visibility: visible;
+}
+.gall li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+
+
 footer{
     width: 100%;
-    height: 100px;
+    height: 120px;
     float: left;
+    background-color: lightblue;
+    display: flex;
+}
+footer .logo{
+    width: 200px;
+    height: 120px;
+}
+footer .logo img{
+    width: 100%;
+    height: auto;
+    margin:40px 0;
+}
+footer .copy{
+    width: calc(100% - 200px);
+    height: 100%;
+    font-size: 14px;
+}
+.copy .ctop, .cbottom{
+    width:100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+.copy .ctop a {
+    display: block;
+    padding: 0 15px;
+    border-right: 1px solid #333;
+}
+.copy .ctop a:first-child{
+    padding-left:0 ;
+}
+
+.pop{
+    padding: 30px 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 5px;
+    line-height: 20px;
+    display: none;
+    z-index: 9999;
+
+}
+.pop button{
+    border: none;
+    padding: 5px 15px;
+    float: right;
 }
