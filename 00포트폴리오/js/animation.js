@@ -1,25 +1,4 @@
-(function (d) {
-    var config = {
-        kitId: 'lah1npm',
-        scriptTimeout: 3000,
-        async: true
-    },
-        h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a;
-    h.className += " wf-loading";
-    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
-    tk.async = true;
-    tk.onload = tk.onreadystatechange = function () {
-        a = this.readyState;
-        if (f || a && a != "complete" && a != "loaded") return;
-        f = true;
-        clearTimeout(t);
-        try { Typekit.load(config) } catch (e) { }
-    };
-    s.parentNode.insertBefore(tk, s)
-})(document);
-
-
-// ⭐ 텍스트 글자 단위 스팬 생성 (ScrollReveal보다 먼저 실행)
+// 텍스트 글자 단위 스판 생성 (ScrollReveal보다 먼저 실행)
 document.addEventListener("DOMContentLoaded", () => {
     const titles = document.querySelectorAll(".intro-title");  // 여러 개 대응
 
@@ -37,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ⭐ ScrollReveal 애니메이션
+// ScrollReveal 애니메이션
 document.addEventListener('DOMContentLoaded', function () {
 
     const sr = ScrollReveal({
@@ -83,3 +62,4 @@ document.addEventListener('DOMContentLoaded', function () {
         distance: '80px'
     });
 });
+

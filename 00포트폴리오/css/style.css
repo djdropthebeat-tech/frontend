@@ -24,6 +24,7 @@ a {
     margin: 0 auto;
     position: relative;
     box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
 }
 
 nav {
@@ -101,9 +102,21 @@ h1 {
 
 section {
     width: 100%;
-    margin-top: 25vh;
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    padding-top: 100px;
+    box-sizing: border-box;
 }
-
+section.works {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+}
+section.contact{
+    padding-top: 10vh;
+    
+}
 h2{
     font-family: "anisette-std", sans-serif;
     font-weight: 600;
@@ -230,7 +243,7 @@ h5 {
 }
 
 .explain p {
-    width: 70%;
+    width: 60%;
     text-align: justify;
 }
 
