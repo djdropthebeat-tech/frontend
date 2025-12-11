@@ -63,3 +63,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//네비게이션 페이지 이동
+  $(function () {
+    const sections = [".about-info", ".works", ".contact"];
+
+    $(".nav-tab").each(function (i) {
+      $(this).on("click", function () {
+        const target = $(sections[i]);
+        if (!target.length) return;
+
+        $("html, body").animate(
+          { scrollTop: target.offset().top },
+          800 // 스크롤 속도
+        );
+      });
+    });
+  });
+

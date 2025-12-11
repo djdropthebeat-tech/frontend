@@ -5,6 +5,7 @@ DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PORTFOLIO</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/font.js"></script>
@@ -29,7 +30,7 @@ DOCTYPE html>
     <div id="wrap">
       <nav>
         <div class="nav-inner">
-          <div class="nav-tab">ABOUT US</div>
+          <div class="nav-tab">ABOUT ME</div>
           <div class="nav-tab">WORKS</div>
           <div class="nav-tab">CONTACT</div>
         </div>
@@ -44,9 +45,7 @@ DOCTYPE html>
             디자인과 개발을 아우르는<br />다재다능한 크리에이터 장다정입니다.
           </p>
           <a href="#">
-            <div class="view">
-              <img src="images/right-arrow.png" alt="" />
-            </div>
+            <i class="fa-solid fa-arrow-down"></i>
           </a>
         </div>
         <div class="info-inner">
@@ -177,9 +176,7 @@ DOCTYPE html>
                   기대할 수 있다.
                 </p>
                 <a href="#">
-                  <div class="view">
-                    <img src="images/right-arrow.png" alt="" />
-                  </div>
+                    <i class="fa-solid fa-arrow-down"></i>
                 </a>
               </div>
             </div>
@@ -207,11 +204,9 @@ DOCTYPE html>
                   이룬다. 졸업 준비 위원회 디자인팀은 포스터, 도록, 웹사이트 등
                   다양한 비주얼 작업을 담당한다.
                 </p>
-                <div class="view">
                   <a href="#">
-                    <img src="images/right-arrow.png" alt="" />
+                    <i class="fa-solid fa-arrow-down"></i>
                   </a>
-                </div>
               </div>
             </div>
             <div class="work-image">
@@ -236,11 +231,9 @@ DOCTYPE html>
                   무드를 재정비해 쇼핑 경험을 보다 직관적이고 편안하게 만드는 데
                   중점을 두고 진행했다.
                 </p>
-                <div class="view">
                   <a href="./akkam/index.html">
-                    <img src="images/right-arrow.png" alt="" />
+                    <i class="fa-solid fa-arrow-down"></i>
                   </a>
-                </div>
               </div>
             </div>
             <div class="work-image">
@@ -254,11 +247,16 @@ DOCTYPE html>
       <section class="contact">
         <h2>contact</h2>
         <div class="float-txt">
-          <p>megan0237@gmail.com</p>
+          <a href="mailto:someone@example.com">
+            <div style="display:flex; flex-direction: row;">
+                <i class="fa-regular fa-envelope"></i>
+                <p>megan0237@gmail.com</p>
+          </div>
+          </a>
           <h4>더 궁금한 점이나 협업 제안 등이 있으시면 편하게 연락해주세요!</h4>
         </div>
       </section>
     </div>
-    <script src="js/animation.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
